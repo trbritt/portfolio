@@ -50,15 +50,15 @@ import {
   const faqs = [
     {
       question: "How did you get into physics?",
-      response: "Lorem, ipsum dolor sit amet consectetur <span class='font-bold'>adipisicing elit</span>. Mollitia temporibus doloremque non eligendi unde ipsam? Voluptatibus, suscipit deserunt quidem delectus perferendis velit molestias, veritatis officia fugiat cumque quaerat earum adipisci?"
+      response: "My grandfather was a nuclear physicist in the US and UK, and so he gave me inspiration growing up. Once I developed an appreciation for being able to understand how <i>everything</i> (more or less) worked with physics, it was game over!"
     },
     {
       question: "What simulation suites do you have experience in?",
-      response: "Lorem, ipsum dolor sit amet consectetur <span class='font-bold'>adipisicing elit</span>. Mollitia temporibus doloremque non eligendi unde ipsam? Voluptatibus, suscipit deserunt quidem delectus perferendis velit molestias, veritatis officia fugiat cumque quaerat earum adipisci?"
+      response: "Over the years, I've developed experience in simulating a range of physical systems: heat transport, relativistic electron beams, charge transport, ultrafast phonon scattering, RF cavities, etc. They've relied on commercial products like COMSOL, ANSYS, and GPT, as well has home grown simulation suites."
     },
     {
       question: "What is your favourite programming language?",
-      response: "Lorem, ipsum dolor sit amet consectetur <span class='font-bold'>adipisicing elit</span>. Mollitia temporibus doloremque non eligendi unde ipsam? Voluptatibus, suscipit deserunt quidem delectus perferendis velit molestias, veritatis officia fugiat cumque quaerat earum adipisci?"
+      response: "What a hard question! Data science and ultrafast phenomena have occupied my last couple of years, so for now I have to say Fortran for the heavy duty number crunching (thanks Quantum Espresso), and Python for the visualization. But as you can see, Javascript made this website so... ;)"
     }
   ];
   
