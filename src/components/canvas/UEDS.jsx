@@ -57,7 +57,7 @@ const UEDSCanvas = () => {
       frameloop='demand' shadows dpr={[1, 2]} camera={{ position: [20, 3, 5], fov: 25 }} gl={{ preserveDrawingBuffer: true } }
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.75} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2}/> 
+        <OrbitControls enableZoom={false} autoRotate={isMobile ? false : true} autoRotateSpeed={0.75} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2}/> 
         // //
         <UEDS isMobile={isMobile} />
       </Suspense>
