@@ -5,7 +5,7 @@ import { OrbitControls, Preload, useGLTF} from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const UEDS = ({ isMobile }) => {
-  const ueds = useGLTF("./UEDS/scene.gltf");
+  const ueds = useGLTF("./UEDS/scene.glb");
 
   return (
     
