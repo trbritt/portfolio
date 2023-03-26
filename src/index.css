@@ -132,6 +132,27 @@
   transform: translateZ(0);
 }
 
+code {
+  font-family: input-mono, monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+article {
+  max-width: 500px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--red);
+  transform-origin: 0%;
+}
 @keyframes mulShdSpin {
   0%,
   100% {

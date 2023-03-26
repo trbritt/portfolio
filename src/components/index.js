@@ -8,6 +8,7 @@ import Works from './Works';
 import Contact from './Contact';
 import Links from './Links';
 import FAQ from './FAQ';
+import Dissertation from './Dissertation';
 export {
   Hero,
   Navbar,
@@ -18,6 +19,7 @@ export {
   Links,
   FAQ,
   Contact,
+  Dissertation,
   EarthCanvas, 
   BallCanvas, 
   UEDSCanvas, 

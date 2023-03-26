@@ -44,6 +44,10 @@ import {
       id: "contact",
       title: "Contact",
     },
+    {
+      id: "dissertation",
+      title: "Dissertation"
+    }
 
   ];
 
