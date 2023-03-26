@@ -5,7 +5,7 @@ import { navLinks } from '../constants';
 import { logo, menu, close } from '../assets';
 import { fadeIn } from '../utils/motion';
 import { AnimatePresence, motion } from "framer-motion";
-import Dissertation from "./Dissertation";
+import {Dissertation} from "./Dissertation";
 
 const show = {
   opacity: 1,
@@ -23,6 +23,7 @@ const hide = {
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
+	const [isOpen, setIsOpen] = React.useState(false)
 
   return (
     <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20  backdrop-blur-sm backgrop-filter shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]`}>
@@ -36,9 +37,9 @@ const Navbar = () => {
         <ul className='list-none hidden sm:flex flex-row gap-10'>
           {navLinks.map((link) => (
             <li key={link.id} className={`${(active === link.title && active !== "Dissertation") ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
-                onClick={()=> setActive(link.title)}>
+                onClick={()=> {setActive(link.title);setIsOpen(!isOpen);}}>
                 <a href={`#${link.id}`}>{link.title}</a>
-                {(active==="Dissertation") && (link.id==="dissertation") ? <Dissertation/> : <></>}
+                {(active==="Dissertation") && (link.id==="dissertation") ? <Dissertation isOpen={isOpen} setIsOpen={setIsOpen}/> : <></>}
             </li>
           ))}
         </ul>
