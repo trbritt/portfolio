@@ -68,7 +68,7 @@ import {
   
   const services = [
     {
-      title: "Ultrafast Dynamics Simulation Developer",
+      title: "Data scientist",
       icon: web,
     },
     {
@@ -76,12 +76,16 @@ import {
       icon: linux,
     },
     {
-      title: "React Developer",
-      icon: backend,
+      title: "Python Developer",
+      icon: python,
     },
     {
       title: "Electron beamline Operator",
-      icon: creator,
+      icon: backend,
+    },
+    {
+      title: "<code>Quantum ESPRESSO</code> developer",
+      icon: fortran,
     },
   ];
   const social_links = [
