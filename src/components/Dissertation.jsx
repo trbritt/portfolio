@@ -58,7 +58,7 @@ export const Dissertation = ({ isOpen, setIsOpen }) => {
 							</span>
 
 							<div
-								className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-center sm:max-w-lg sm:w-full"
+								className="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-center sm:max-w-lg sm:w-full"
 								role="dialog"
 								aria-modal="true"
 								aria-labelledby="modal-headline"
