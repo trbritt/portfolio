@@ -8,7 +8,6 @@ const UEDS = ({ isMobile }) => {
   const ueds = useGLTF("./UEDS/scene.glb");
 
   return (
-    
     <mesh>
       <hemisphereLight intensity={0.15} groundColor='black' />
       <spotLight position={[-20, 50, 10]} angle={0.12} penumbra={1} intensity={1} castShadow shadow-mapSize={1024}/>
@@ -53,6 +52,7 @@ const UEDSCanvas = () => {
   }, []);
 
   return (
+    isMobile ? <></> :
     <Canvas
       frameloop='demand' shadows dpr={[1, 2]} camera={{ position: [20, 3, 5], fov: 25 }} gl={{ preserveDrawingBuffer: true } }
     >

@@ -10,7 +10,7 @@ const SectionWrapper = (Component, idName) =>
         <span className='hash-span' id={idName}/>
         <motion.section
           variants={staggerContainer()}
-          initial={idName === 'about' ? 'show' : 'hidden'}
+          initial={idName === 'about' ? 'show' : idName === 'work' ? 'show' : 'hidden'}
           whileInView='show'
           viewport={{ once: true, amount: 0.25 }}
           className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
