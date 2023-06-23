@@ -27,10 +27,11 @@ import mcgill from "./company/mcgill.png";
 import IU from "./company/IU.png";
 import KAIST from "./company/KAIST.png";
 import BNL from "./company/BNL.png";
-
+import go from "./tech/go.png";
 import nanolett from "./nanolett.png";
 import prr from "./prr.png";
 import mst from "./mst.png";
+import prb from "./prb.png";
 
 export {
   logo,
@@ -56,6 +57,7 @@ export {
   C,
   Cpp,
   fortran,
+  go,
   linux,
   mcgill,
   IU,
@@ -63,5 +65,6 @@ export {
   BNL,
   nanolett,
   prr,
-  mst
+  mst,
+  prb
 };

@@ -13,6 +13,7 @@ import {
     C,
     Cpp,
     fortran,
+    go,
     linux,
     mcgill,
     orcid,
@@ -24,7 +25,8 @@ import {
     threejs,
     nanolett,
     prr,
-    mst
+    mst,
+    prb
   } from "../assets";
   
   export const navLinks = [
@@ -122,7 +124,12 @@ import {
     },{
       name: "Fortran",
       icon: fortran,
-    },{
+    },
+    {
+      name: "Golang",
+      icon: go,
+    },
+    {
       name: "Linux",
       icon: linux,
     },    
@@ -215,6 +222,27 @@ import {
   ];
   
   const projects = [
+    {
+      name: "Ultrafast phonon diffuse scattering as a tool for observing chiral phonons in monolayer hexagonal lattices",
+      description:
+        "At the 2D limit, hexagonal systems such as monolayer transition metal dichalcogenides (TMDs) and graphene exhibit unique coupled spin and momentum-valley physics (valley pseudospin) owing to broken spatial inversion symmetry and strong spin-orbit coupling. Circularly polarized light provides the means for pseudospin-selective excitation of excitons (or electrons and holes) and can yield momentum-valley polarized populations of carriers that are the subject of proposed valleytronic applications. The chirality of these excited carriers have important consequences for the available relaxation/scattering pathways, which must conserve (pseudo)angular momentum as well as energy. One available relaxation channel that satisfies these constraints is coupling to chiral phonons. Here, we show that chiral carrier-phonon coupling following valley-polarized photoexcitation is expected to lead to a strongly valley-polarized chiral phonon distribution when this relaxation mechanism is dominant. This momentum valley phonon polarization is directly measurable using ultrafast phonon diffuse scattering techniques.",
+      tags: [
+        {
+          name: "chiral phonons",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "monolayers",
+          color: "green-text-gradient",
+        },
+        {
+          name: "density functional theory",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: prb,
+      source_code_link: "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.107.214306",
+    },
     {
       name: "Ultrafast phonon dynamics in atomically thin MoS2",
       description:
