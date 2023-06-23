@@ -1,8 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  base: '/'
+export default defineConfig(({ command, mode, ssrBuild }) => {
+  if (command === 'dev') {
+    return {
+        plugins: [react()],
+        base: '/portfolio'
+    }
+  } else {
+    // command === 'build'
+    return {
+      plugins: [react()],
+      base: '/'
+    }
+  }
 })
