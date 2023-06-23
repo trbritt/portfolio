@@ -17,7 +17,7 @@ import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import reactjs from "./tech/reactjs.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import threejs from "./tech/threejs.png";
 import python from './tech/python.png'
 import C from './tech/C.png';
 import Cpp from './tech/Cpp.png';
