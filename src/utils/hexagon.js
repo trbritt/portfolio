@@ -83,7 +83,7 @@ const draw = (p5, isMobile) => {
         current_angle = display_frame / 50000.0 + 39 ;
       }
       var sides=6
-      var size=isMobile ? 75 : 150
+      var size=isMobile ? 75 : 130
       let angle = p5.TWO_PI / sides;
       p5.push();
       p5.translate(x,y);
