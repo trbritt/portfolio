@@ -64,7 +64,7 @@ const setup = (p5, parentRef) => {
   current_angle = 39;
   p5.frameRate(60);
 };
-const draw = (p5) => {
+const draw = (p5, isMobile) => {
   p5.background('#050816');
   let decriment = [0.01, 0.008];
   for (let j = 0; j < n_gons; j += 1) {
@@ -82,9 +82,8 @@ const draw = (p5) => {
         display_frame += 1;
         current_angle = display_frame / 50000.0 + 39 ;
       }
-      // polygon(x, y, size=200, sides=6, rot=current_angle);
       var sides=6
-      var size=200
+      var size=isMobile ? 75 : 150
       let angle = p5.TWO_PI / sides;
       p5.push();
       p5.translate(x,y);
