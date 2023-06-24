@@ -55,7 +55,6 @@ const Hero = () => {
       <Suspense fallback={<CanvasLoader />}>
         <Sketch setup={setup} draw={(p5) => draw(p5, isMobile)} windowResized={resizeCanvas}></Sketch>
       </Suspense>
-      <Preload all />
       <UEDSCanvas />
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
