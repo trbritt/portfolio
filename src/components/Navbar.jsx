@@ -38,7 +38,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <li key={link.id} className={`${(active === link.title && active !== "Dissertation") ? "text-white" : "text-secondary"} hover:text-white text-[18px] font-medium cursor-pointer`}
                 onClick={()=> {setActive(link.title);setIsOpen(!isOpen);}}>
-                <a href={`#${link.id}`}>{link.title}</a>
+                <a href={"https://dissertation.tbritt.xyz"}>{link.title}</a>
                 {(active==="Dissertation") && (link.id==="dissertation") ? <Dissertation isOpen={isOpen} setIsOpen={setIsOpen}/> : null}
             </li>
           ))}
