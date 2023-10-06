@@ -62,7 +62,7 @@ const Hero = () => {
                     color: "#fff",
                     weight: "bold"
                 }}
-                file="../assets/Tristan_Britt_Resume_Professional.pdf"   // Specify the path to the downloadable file
+                file="/Tristan_Britt_Resume_Professional.pdf"   // Specify the path to the downloadable file
                 radius={8}                  // Specify the border radius for the button
                 topLeftRadius={8}           // Specify individual border radius if isMixedRadius is toggled
                 topRightRadius={8}
