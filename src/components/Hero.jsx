@@ -50,8 +50,8 @@ const Hero = () => {
             <br className='sm:block hidden' />
             <p className="sm:hidden inline-block">&nbsp;</p>
             PhD candidate in ultrafast physics
-          </h3>
-          <Download
+            <br/>
+            <Download
                 fileName="Tristan_Britt_Resume_Professional.pdf"  // Specify the file name for download
                 title="Download Resume"      // Specify the label for the download button
                 tint="#4CAF50"             // Specify the background color for the button
@@ -73,6 +73,7 @@ const Hero = () => {
                 bottomRightPadding={16}
                 bottomLeftPadding={16}
           />
+          </h3>
         </div>
       </div>
       <Suspense fallback={<CanvasLoader />}>
