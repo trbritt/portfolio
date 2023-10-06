@@ -74,12 +74,16 @@ import {
       icon: web,
     },
     {
+      title: "Python Developer",
+      icon: python,
+    },
+    {
       title: "Linux Developer",
       icon: linux,
     },
     {
-      title: "Python Developer",
-      icon: python,
+      title: "Invited Peer Reviewer (APS, ACS, <i>Nature</i>)",
+      icon: creator,
     },
     {
       title: "Electron beamline Operator",
