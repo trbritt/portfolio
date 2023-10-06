@@ -6,6 +6,7 @@ import Sketch from 'react-p5';
 import React, { Suspense, useEffect, useState } from "react";
 import CanvasLoader from "./Loader";
 import { Preload } from "@react-three/drei";
+import Download from './DownloadButton'; // Assuming Download component is in the same directory
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -50,6 +51,28 @@ const Hero = () => {
             <p className="sm:hidden inline-block">&nbsp;</p>
             PhD candidate in ultrafast physics
           </h3>
+          <Download
+                fileName="Tristan_Britt_Resume_Professional.pdf"  // Specify the file name for download
+                title="Download Resume"      // Specify the label for the download button
+                tint="#4CAF50"             // Specify the background color for the button
+                font={{
+                    fontFace: "Arial",
+                    size: 20,
+                    color: "#fff",
+                    weight: "bold"
+                }}
+                file="../assets/Tristan_Britt_Resume_Professional.pdf"   // Specify the path to the downloadable file
+                radius={8}                  // Specify the border radius for the button
+                topLeftRadius={8}           // Specify individual border radius if isMixedRadius is toggled
+                topRightRadius={8}
+                bottomRightRadius={8}
+                bottomLeftRadius={8}
+                stylePadding={16}           // Specify padding for the button
+                topLeftPadding={16}         // Specify individual padding if isMixedPadding is toggled
+                topRightPadding={16}
+                bottomRightPadding={16}
+                bottomLeftPadding={16}
+          />
         </div>
       </div>
       <Suspense fallback={<CanvasLoader />}>
