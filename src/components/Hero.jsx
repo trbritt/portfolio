@@ -6,6 +6,8 @@ import Sketch from 'react-p5';
 import React, { Suspense, useEffect, useState } from "react";
 import CanvasLoader from "./Loader";
 import { Preload } from "@react-three/drei";
+import WavyText from "./WavyText";
+
 import Download from './DownloadButton'; // Assuming Download component is in the same directory
 
 const Hero = () => {
@@ -42,9 +44,13 @@ const Hero = () => {
         </div>
 
         <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Tristan</span>
-          </h1>
+          <div className="justify=center flex items-center">
+            <h1 className={`${styles.heroHeadText} text-white`}>
+              Hi, I'm 
+            </h1>
+            <WavyText text="Tristan" className="font-black text-[#915EFF] lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2"/>
+          </div>
+          {/* <span className='text-[#915EFF]'>Tristan</span> */}
           <h3 className={`${styles.heroSubText} mt-2 text-white-100`}>
             I develop epic condensed matter code,
             <br className='sm:block hidden' />
