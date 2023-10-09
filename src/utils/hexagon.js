@@ -65,7 +65,7 @@ const setup = (p5, parentRef) => {
   p5.frameRate(60);
 };
 const draw = (p5, isMobile) => {
-  p5.background('#4f455c');
+  p5.background('#050816');
   let decriment = [0.01, 0.008];
   for (let j = 0; j < n_gons; j += 1) {
     let start_ramp = p5.color(colors_hex[j][0])
