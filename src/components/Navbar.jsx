@@ -26,7 +26,7 @@ const Navbar = () => {
 	const [isOpen, setIsOpen] = React.useState(false)
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20  backdrop-blur-sm backgrop-filter shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]`}>
+    <nav className={`${styles.paddingX} violet-gradient w-full flex items-center py-5 fixed top-0 z-20 backdrop-blur-sm backgrop-filter `}>
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link to="/portfolio" className='flex items-center gap-2' onClick={()=> {setActive("");window.scrollTo(0,0);}}>
           <img src={logo} alt="logo" className='w-9 h-9 object-contain'/>
