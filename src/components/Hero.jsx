@@ -61,7 +61,7 @@ const Hero = () => {
           <Download
                 fileName="Tristan_Britt_Resume_Professional.pdf"  // Specify the file name for download
                 title="Download Resume"      // Specify the label for the download button
-                tint="#915EFF"             // Specify the background color for the button
+                tint="#8693f2"             // Specify the background color for the button
                 font={{
                     fontFace: "Poppins",
                     size: 20,
