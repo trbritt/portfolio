@@ -5,7 +5,7 @@ import { navLinks } from '../constants';
 import { logo, menu, close } from '../assets';
 import { fadeIn } from '../utils/motion';
 import { AnimatePresence, motion } from "framer-motion";
-import {Dissertation} from "./Dissertation";
+// import {Dissertation} from "./Dissertation";
 
 const show = {
   opacity: 1,
@@ -64,7 +64,7 @@ const Navbar = () => {
                   }
               }>
                 <a href={`#${link.id}`}>{link.title}</a>
-                {(active==="Dissertation") && (link.id==="dissertation") ? <Dissertation isOpen={isOpen} setIsOpen={setIsOpen}/> : null}
+                {/* {(active==="Dissertation") && (link.id==="dissertation") ? <Dissertation isOpen={isOpen} setIsOpen={setIsOpen}/> : null} */}
               </li>
             ))}
             </ul>
