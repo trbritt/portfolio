@@ -32,6 +32,7 @@ import nanolett from "./nanolett.png";
 import prr from "./prr.png";
 import mst from "./mst.png";
 import prb from "./prb.png";
+import rust from "./rust.png";
 
 export {
   logo,
@@ -66,5 +67,6 @@ export {
   nanolett,
   prr,
   mst,
-  prb
+  prb,
+  rust
 };

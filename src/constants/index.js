@@ -8,7 +8,6 @@ import {
     css,
     reactjs,
     git,
-    docker,
     python,
     C,
     Cpp,
@@ -26,7 +25,8 @@ import {
     nanolett,
     prr,
     mst,
-    prb
+    prb,
+    rust
   } from "../assets";
   
   export const navLinks = [
@@ -86,13 +86,14 @@ import {
       icon: creator,
     },
     {
-      title: "Electron beamline Operator",
-      icon: backend,
-    },
-    {
       title: "<code>Quantum ESPRESSO</code> developer",
       icon: fortran,
     },
+    {
+      title: "Electron beamline Operator",
+      icon: backend,
+    },
+
   ];
   const social_links = [
     {
@@ -120,23 +121,26 @@ import {
       name: "Python",
       icon: python,
     },{
+      name: "Fortran",
+      icon: fortran,
+    },{
       name: "C",
       icon: C,
     },{
       name: "Cpp",
       icon: Cpp,
     },{
-      name: "Fortran",
-      icon: fortran,
-    },
+      name: "Linux",
+      icon: linux,
+    },  
     {
       name: "Golang",
       icon: go,
     },
     {
-      name: "Linux",
-      icon: linux,
-    },    
+      name: "Rust",
+      icon: rust
+    },
     {
       name: "HTML 5",
       icon: html,
@@ -165,11 +169,6 @@ import {
       name: "git",
       icon: git,
     },
-    {
-      name: "docker",
-      icon: docker,
-    },
-
   ];
   
   const experiences = [
