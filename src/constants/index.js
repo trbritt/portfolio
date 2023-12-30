@@ -26,7 +26,8 @@ import {
     prr,
     mst,
     prb,
-    rust
+    rust,
+    prx
   } from "../assets";
   
   export const navLinks = [
@@ -225,6 +226,26 @@ import {
   ];
   
   const projects = [
+    {
+      name: "Polaron diffuse scattering from first-principles: an application to the thermoelectric SnSe",
+      description: "A thermoelectric material is one that has a particularly high efficiency at converting temperature differences to an electric voltage, the prototypical example of which is the layered monochalcogen material SnSe. Its thermoelectric figure of merit $zT$ is anomalously large in its room temperature phase, and still increases an order of magnitude in the high temperature $Cmcm$ phase. Yet even in the room temperature $Pnma$ phase, the origins of this material's thermoelectric performance remain elusive.  Ultrafast scattering studies have offered assorted conclusions regarding the lattice dynamics following photoexcitation, from atomic dislocations to metastable structural phases to polaron formation. The distillation of these various insights into a coherent description of the material has been challenging due to the many competing effects in SnSe. In this work, we apply an ab-initio framework to describe diffuse scattering in polaronic materials. These computations suggest that polaron formation in SnSe is unlikely, and that an alternate interpretation of recently reported ultrafast scattering data is required. Further use of ab-initio approaches shows that a more conventional electron-phonon coupling, combined with peculiar single-phonon structure factors, provide a good description of previously reported early time dynamics. Discrepancies in the rise time of phonon occupation following photoexcitation are explained by strong anharmonic lattice effects that induce pronounced Umklapp-dominated 3-phonon and 4-phonon scattering processes. The insights of this work aim to motivate experimental schemes for polaron detection in materials where they exist, as well as guide future studies in the search for the origin of the high thermoelectricity in SnSe",
+      tags: [
+        {
+          name: "polarons",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "thermoelectric",
+          color: "green-text-gradient",
+        },
+        {
+          name: "density functional theory",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: prx,
+      source_code_link: null
+    },
     {
       name: "Ultrafast phonon diffuse scattering as a tool for observing chiral phonons in monolayer hexagonal lattices",
       description:

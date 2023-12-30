@@ -33,6 +33,7 @@ import prr from "./prr.png";
 import mst from "./mst.png";
 import prb from "./prb.png";
 import rust from "./rust.png";
+import prx from "./prx.png";
 
 export {
   logo,
@@ -68,5 +69,6 @@ export {
   prr,
   mst,
   prb,
-  rust
+  rust,
+  prx
 };
