@@ -21,12 +21,12 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     return {
       plugins: [
         react(),
-        compression({
-          algorithm: 'gzip', exclude: [/\.(br)$ /, /\.(gz)$/]
-        }),
-        compression({
-          algorithm: 'brotliCompress', exclude: [/\.(br)$ /, /\.(gz)$/],
-         }),
+        // compression({
+        //   algorithm: 'gzip', exclude: [/\.(br)$ /, /\.(gz)$/]
+        // }),
+        // compression({
+        //   algorithm: 'brotliCompress', exclude: [/\.(br)$ /, /\.(gz)$/],
+        //  }),
       ],
       base: '/'
     }
