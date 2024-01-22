@@ -63,6 +63,7 @@ const setup = (p5, parentRef) => {
   display_frame = 0;
   current_angle = 39;
   p5.frameRate(60);
+  p5.pixelDensity(1);
 };
 const draw = (p5, isMobile) => {
   p5.background('#050816');
