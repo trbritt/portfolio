@@ -3,13 +3,11 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { social_links } from "../constants";
-import Tilt from "react-tilt";
 
 const SocialLinkCard = ({ index, title, icon, source_code_link }) => (
-    <Tilt className='xs:w-[250px] w-full' >
-      <motion.div
-        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-        className='w-full maroon-slate-gradient p-[1px] rounded-[20px] shadow-card cursor-pointer' onClick={() => window.open(source_code_link, "_blank")}
+    <div className='xs:w-[250px] w-full' >
+      <article data-glow
+        className='w-full p-[1px] rounded-[20px] shadow-card bg-tertiary cursor-pointer' onClick={() => window.open(source_code_link, "_blank")}
       >
         <div
           options={{
@@ -17,7 +15,7 @@ const SocialLinkCard = ({ index, title, icon, source_code_link }) => (
             scale: 1,
             speed: 150,
           }}
-          className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[180px] flex justify-evenly items-center flex-col'
+          className='rounded-[20px] py-5 px-12 min-h-[180px] flex justify-evenly items-center flex-col'
         >
           <img
             src={icon}
@@ -29,8 +27,8 @@ const SocialLinkCard = ({ index, title, icon, source_code_link }) => (
             {title}
           </h3>
         </div>
-      </motion.div>
-    </Tilt>
+      </article>
+    </div>
   );
 const Links = () => {
   return (

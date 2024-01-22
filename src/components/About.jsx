@@ -28,7 +28,7 @@ const usePointerGlow = () => {
 }
 const ServiceCard = ({ index, title, icon }) => (
   <div className='xs:w-[250px] w-full'>
-    <article data-glow className="shadow-card bg-tertiary w-full p-[1px]">
+    <article data-glow className="shadow-card bg-tertiary w-full p-[1px] rounded-[20px]">
       <div
         options={{
           max: 45,

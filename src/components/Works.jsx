@@ -1,5 +1,4 @@
 import React from "react";
-import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -19,7 +18,7 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
+      <article data-glow
         options={{
           max: 5,
           scale: 1,
@@ -66,7 +65,7 @@ const ProjectCard = ({
             </p>
           ))}
         </div>
-      </Tilt>
+      </article>
     </motion.div>
   );
 };

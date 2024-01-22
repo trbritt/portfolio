@@ -148,10 +148,10 @@ article:last-of-type {
 	--spread: 200;
 }
 article {
-  aspect-ratio: 3 / 4;
+  /* aspect-ratio: 3 / 4; */
   border-radius: calc(var(--radius) * 1px);
   width: 260px;
-  max-width: 500px;
+  /* max-width: 500px; */
   margin: 0 auto;
   position: relative;
 	grid-template-rows: 1fr auto;
@@ -174,7 +174,7 @@ article {
     calc(var(--y, 0) * 1px),
     hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 0.1)), transparent
   );
-  background-color: var(--backdrop, transparent);
+  /* background-color: var(--backdrop, transparent); */
   background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
   background-position: 50% 50%;
   background-attachment: fixed;
@@ -190,7 +190,7 @@ article {
   position: absolute;
   inset: calc(var(--border-size) * -1);
   border: var(--border-size) solid transparent;
-  border-radius: calc(var(--radius) * 1px);
+  border-radius: 20px;
   background-attachment: fixed;
   background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
   background-repeat: no-repeat;
