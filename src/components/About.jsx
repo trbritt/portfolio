@@ -1,42 +1,56 @@
 import React from "react";
-import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import Latex from 'react-latex-next';
-
+const usePointerGlow = () => {
+  const [status, setStatus] = React.useState(null)
+  React.useEffect(() => {
+    const syncPointer = ({ x: pointerX, y: pointerY }) => {
+      const x = pointerX.toFixed(2)
+      const y = pointerY.toFixed(2)
+      const xp = (pointerX / window.innerWidth).toFixed(2)
+      const yp = (pointerY / window.innerHeight).toFixed(2)
+      document.documentElement.style.setProperty('--x', x)
+      document.documentElement.style.setProperty('--xp', xp)
+      document.documentElement.style.setProperty('--y', y)
+      document.documentElement.style.setProperty('--yp', yp)
+      setStatus({ x, y, xp, yp })
+    }
+    document.body.addEventListener('pointermove', syncPointer)
+    return () => {
+      document.body.removeEventListener('pointermove', syncPointer)
+    }
+  }, [])
+  return [status]
+}
 const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-    >
+  <div className='xs:w-[250px] w-full'>
+    <article data-glow className="shadow-card bg-tertiary w-full p-[1px]">
       <div
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+        className='py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
       >
         <img
           src={icon}
           alt='web-development'
           className='w-16 h-16 object-contain'
         />
-
-        {/* <h3 className='text-white text-[20px] font-bold text-center'>
-          {title}
-        </h3> */}
         <div className='text-white text-[20px] font-bold text-center' dangerouslySetInnerHTML={{__html: title}}/>
       </div>
-    </motion.div>
-  </Tilt>
+
+      </article>
+   </div>
 );
 
 const About = () => {
+  const [status] = usePointerGlow();
   return (
     <>
       <motion.div variants={textVariant()}>
