@@ -161,7 +161,7 @@ article {
   border: 1px solid hsl(0 0% 100% / 0.15);
   backdrop-filter: blur(calc(var(--cardblur, 5) * 1px));
   /* For demo purposes. Means you get the effect on mobile */
-  touch-action: none;
+  /* touch-action: none; */
 }
 /* Glow specific styles */
 [data-glow] {

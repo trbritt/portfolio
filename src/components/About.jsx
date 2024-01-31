@@ -63,8 +63,11 @@ const About = () => {
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
         <Latex>
-        Having worked extensively in the managerial teams of large scale organisations in the time before completing my undergraduate degree, I've developed team leadership skills from the beginning of my professional career. My industry research includes simulation and optimisation of custom radiofrequency (RF) waveguides for use in cryogenic axion dark matter experiments (ADMX) at the Korea Advanced Institute of Science and Technology (KAIST). In addition, I have also saw through the co-design and optimisation of the bending magnet currently in use in the LEReC beamline in the electron Relativistic Heavy Ion Collider (eRHIC) at Brookhaven National Lab (BNL). These projects have given me the experience and preparedness to handle high quality real-time research.
-        My current focus is on examining the unique properties of 2D materials as revealed through momentum and time resolved ultrafast electron diffraction spectroscopy at McGill University, under the advisorship of Professor Bradley J Siwick, including both experiment and numerical simulations using time dependent perturbative density functional theory (TDPDFT). Experiments under progress include the observation of chiral phonons in monolayer molybdenum disulphide (MoS$_2$), as well as the thermoelectric properties of tin selenide (SnSe) approaching the PNMA phase transition at 600K.</Latex>
+        Acquiring my doctorate (PhD) in Physics at McGill University enforced my high attention to detail, sharpened my analytical reasoning, and gave me robust and extensive backgrounds in Mathematics, Statistics, Programming, and high-quality real-time research. 
+
+        My professional journey has equipped me with research-grade proficiency in C++, Fortran, and Python, and I have used these tools for a range of industrial applications, from experiment design at the Large Hadron Collider (LHC) in Switzerland, to designing and implementing a competitive replacement for the LabView infrastructure at Flojoy, Inc. Further, my academic research required the collection of extensive (~TB) datasets, and the efficient use of supercomputing resources, such as MPI, OpenMP, and CUDA, to extract and analyse the relevant information from the resulting data. 
+
+        My abilities to utilise cutting-edge technology, to analyse and successfully execute solutions to complex problems, and my strong willingness to collaborate with my peers poises me as successful researcher.</Latex>
       </motion.p>
 
       <div className='mt-20 flex justify-center flex-wrap gap-10'>
