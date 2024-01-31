@@ -58,17 +58,23 @@ const About = () => {
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
-      <motion.p
+      <motion.div
         variants={fadeIn("down", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        className='mt-4 max-w-3xl leading-[30px]'
       >
-        <Latex>
+        {/* <Latex> */}
+        <p className="mb-5">
         Acquiring my doctorate (PhD) in Physics at McGill University enforced my high attention to detail, sharpened my analytical reasoning, and gave me robust and extensive backgrounds in Mathematics, Statistics, Programming, and high-quality real-time research. 
+        </p>
+        <p className="mb-5">
+        My professional journey has equipped me with research-grade proficiency in <code>C++</code>, <code>fortran</code>, and <code>python</code>, and I have used these tools for a range of industrial applications, from experiment design at the Large Hadron Collider (LHC) in Switzerland, to designing and implementing a competitive replacement for the LabView infrastructure at Flojoy, Inc. Further, my academic research required the collection of extensive (~TB) datasets, and the efficient use of supercomputing resources, such as <code>MPI</code>, <code>OpenMP</code>, and <code>CUDA</code>, to extract and analyse the relevant information from the resulting data. 
+        </p>
+        <p className="mb-5">
+        My abilities to utilise cutting-edge technology, to analyse and successfully execute solutions to complex problems, and my strong willingness to collaborate with my peers poises me as successful researcher.
+        {/* </Latex> */}
+        </p>
 
-        My professional journey has equipped me with research-grade proficiency in C++, Fortran, and Python, and I have used these tools for a range of industrial applications, from experiment design at the Large Hadron Collider (LHC) in Switzerland, to designing and implementing a competitive replacement for the LabView infrastructure at Flojoy, Inc. Further, my academic research required the collection of extensive (~TB) datasets, and the efficient use of supercomputing resources, such as MPI, OpenMP, and CUDA, to extract and analyse the relevant information from the resulting data. 
-
-        My abilities to utilise cutting-edge technology, to analyse and successfully execute solutions to complex problems, and my strong willingness to collaborate with my peers poises me as successful researcher.</Latex>
-      </motion.p>
+      </motion.div>
 
       <div className='mt-20 flex justify-center flex-wrap gap-10'>
         {services.map((service, index) => (
