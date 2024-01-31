@@ -60,7 +60,7 @@ const About = () => {
 
       <motion.div
         variants={fadeIn("down", "", 0.1, 1)}
-        className='mt-4 max-w-3xl leading-[30px]'
+        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
         {/* <Latex> */}
         <p className="mb-5">
