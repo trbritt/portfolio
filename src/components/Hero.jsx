@@ -44,7 +44,7 @@ const Hero = () => {
         </div>
 
         <div>
-          <div className="justify=center flex items-center">
+          <div className={`justify-center flex ${isMobile ? 'flex-col' : 'flex-row'} items-center`}>
             <h1 className={`${styles.heroHeadText} text-white`}>
               Hi, I'm 
             </h1>
@@ -52,10 +52,8 @@ const Hero = () => {
           </div>
           {/* <span className='text-[#915EFF]'>Tristan</span> */}
           <h3 className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop high performance code
-            <br className='sm:block hidden' />
-            <p className="sm:hidden inline-block">&nbsp;</p>
-            for high performance research
+            I develop high performance code ... <br/>
+            ... for high performance research
           </h3>
           <br/>
           <Download
