@@ -211,31 +211,33 @@ import {
       ],
     },
     {
-      title: "PhD Candidate",
+      title: "Doctorate in Physics",
       company_name: "McGill University",
       icon: mcgill,
       iconBg: "#E6DEDD",
-      date: "Jan 2021 - Present",
+      date: "Jan 2021 - March 2024",
       points: [
         "Finite-element FDTD simulation design",
         "Relativistic space-charge electron beamline design and optimization",
         "Simulation and development of time-resolved electron energy loss spectroscopy (trEELS)",
         "Simulation and first-time realization of inelastic phonon-diffuse scattering on 2D materials",
+        "First direct procedure developed to directly observe chiral phonons in 2D materials",
+        "Developed the concept of polaron diffuse scattering"
       ],
     },
   ];
   
   const projects = [
     {
-      name: "Polaron diffuse scattering from first-principles: an application to the thermoelectric SnSe",
-      description: "A thermoelectric material is one that has a particularly high efficiency at converting temperature differences to an electric voltage, the prototypical example of which is the layered monochalcogen material SnSe. Its thermoelectric figure of merit $zT$ is anomalously large in its room temperature phase, and still increases an order of magnitude in the high temperature $Cmcm$ phase. Yet even in the room temperature $Pnma$ phase, the origins of this material's thermoelectric performance remain elusive.  Ultrafast scattering studies have offered assorted conclusions regarding the lattice dynamics following photoexcitation, from atomic dislocations to metastable structural phases to polaron formation. The distillation of these various insights into a coherent description of the material has been challenging due to the many competing effects in SnSe. In this work, we apply an ab-initio framework to describe diffuse scattering in polaronic materials. These computations suggest that polaron formation in SnSe is unlikely, and that an alternate interpretation of recently reported ultrafast scattering data is required. Further use of ab-initio approaches shows that a more conventional electron-phonon coupling, combined with peculiar single-phonon structure factors, provide a good description of previously reported early time dynamics. Discrepancies in the rise time of phonon occupation following photoexcitation are explained by strong anharmonic lattice effects that induce pronounced Umklapp-dominated 3-phonon and 4-phonon scattering processes. The insights of this work aim to motivate experimental schemes for polaron detection in materials where they exist, as well as guide future studies in the search for the origin of the high thermoelectricity in SnSe",
+      name: "A momentum-resolved view of polaron formation in materials",
+      description: "An $ab-initio$ computational methodology for interrogating the phonon contribution to polaron formation in real materials is developed that can be directly compared to experiment. Using LiF as an example, we show that the recent $ab-initio$ theory of Sio et. al [PRL 122, 246403 (2019)] makes predictions of the momentum- and branch dependent phonon amplitudes in polaron quasiparticles that are testable using ultrafast electron diffuse scattering (UEDS) and related techniques. The large electron polaron in LiF has UEDS signatures that are qualitatively similar to those expected from a simple isotropic strain field model, but the small hole polaron exhibits a profoundly anisotropic UEDS pattern that is in poor agreement with an isotropic strain field. We also show that these polaron diffuse scattering signatures are directly emblematic of the underlying polaron wavefunction.  The combination of new time and momentum resolved experimental probes of nonequilibrium phonons with novel computational methods promises to complement the qualitative results obtained via model Hamiltonians with a first principles, material-specific quantitative understanding of polarons and their properties.",
       tags: [
         {
           name: "polarons",
           color: "blue-text-gradient",
         },
         {
-          name: "thermoelectric",
+          name: "first principles",
           color: "green-text-gradient",
         },
         {

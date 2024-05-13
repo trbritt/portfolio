@@ -48,14 +48,14 @@ const Hero = () => {
             <h1 className={`${styles.heroHeadText} text-white`}>
               Hi, I'm 
             </h1>
-            <WavyText text=" Tristan" className="font-black text-[#8693f2] lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2"/>
+            <WavyText text=" Tristan, Ph.D." className="font-black text-[#8693f2] lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2"/>
           </div>
           {/* <span className='text-[#915EFF]'>Tristan</span> */}
           <h3 className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop epic condensed matter code,
+            I develop high performance code
             <br className='sm:block hidden' />
             <p className="sm:hidden inline-block">&nbsp;</p>
-            PhD candidate in ultrafast physics
+            for high performance research
           </h3>
           <br/>
           <Download
