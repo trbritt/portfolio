@@ -31,6 +31,7 @@ import prx from "./prx.png";
 import ethereum from "./tech/ethereum.png";
 import flojoy from "./flojoy.png";
 import warlock from "./tech/warlock.png";
+import sylow from "./sylow.png";
 
 export {
   creator,
@@ -64,5 +65,6 @@ export {
   solidity,
   ethereum,
   flojoy,
-  warlock
+  warlock,
+  sylow
 };

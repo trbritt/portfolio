@@ -25,7 +25,8 @@ import {
     prx,
     ethereum,
     flojoy,
-    warlock
+    warlock,
+    sylow
   } from "../components/assets";
   
   export const navLinks = [
@@ -77,6 +78,10 @@ import {
       icon: creator,
     },
     {
+      title: "Rust developer",
+      icon: rust,
+    },
+    {
       title: "C++ Developer",
       icon: Cpp,
     },
@@ -85,11 +90,7 @@ import {
       icon: python,
     },
     {
-      title: "Rust developer",
-      icon: rust,
-    },
-    {
-      title: "Data scientist",
+      title: "High Performance Computationalist",
       icon: web,
     },
 
@@ -167,7 +168,7 @@ import {
       iconBg: "#E6DEDD",
       date: "June 2024 - Present",
       points: [
-        "Performing research and developing strategies on reintermediating MEV and OEV"
+        "Performing research and developing strategies on reintermediating MEV and OEV, developing novel statistical and atomic arbitrage strategies, liquidation detection, and cutting-edge cryptography research"
       ]
     },
     {
@@ -237,6 +238,26 @@ import {
   
   const projects = [
     {
+      name: "Sylow: The Fastest Prover on the Planet for BN254",
+      description: "Sylow (ˈsyːlɔv) is a comprehensive Rust library for elliptic curve cryptography, specifically tailored for the BN254 ( alt-bn128) curve. It provides a robust implementation of finite fields, elliptic curve groups, and pairing-based cryptography, making it an ideal choice for applications in blockchain, zero-knowledge proofs, and other cryptographic systems",
+      tags: [
+        {
+          name: "Cryptography",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Elliptic Curve",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Zero Knowledge",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: sylow,
+      source_code_link: "https://github.com/warlock-labs/sylow/tree/main"
+    },
+    {
       name: "A momentum-resolved view of polaron formation in materials",
       description: "An ab-initio computational methodology for interrogating the phonon contribution to polaron formation in real materials is developed that can be directly compared to experiment. Using LiF as an example, we show that the recent ab-initio theory of Sio et. al [PRL 122, 246403 (2019)] makes predictions of the momentum- and branch dependent phonon amplitudes in polaron quasiparticles that are testable using ultrafast electron diffuse scattering (UEDS) and related techniques. The large electron polaron in LiF has UEDS signatures that are qualitatively similar to those expected from a simple isotropic strain field model, but the small hole polaron exhibits a profoundly anisotropic UEDS pattern that is in poor agreement with an isotropic strain field. We also show that these polaron diffuse scattering signatures are directly emblematic of the underlying polaron wavefunction.  The combination of new time and momentum resolved experimental probes of nonequilibrium phonons with novel computational methods promises to complement the qualitative results obtained via model Hamiltonians with a first principles, material-specific quantitative understanding of polarons and their properties.",
       tags: [
@@ -254,7 +275,7 @@ import {
         },
       ],
       image: prx,
-      source_code_link: "https://arxiv.org/pdf/2402.01468"
+      source_code_link: "https://www.nature.com/articles/s41524-024-01347-x"
     },
     {
       name: "Ultrafast phonon diffuse scattering as a tool for observing chiral phonons in monolayer hexagonal lattices",
