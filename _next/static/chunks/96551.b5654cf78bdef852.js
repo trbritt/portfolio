@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[96551],{96551:function(e,n,r){r.r(n),r.d(n,{hashMessage:function(){return u}});var t=r(69809),s=r(57831),a=r(85298);function u(e,n){let r="string"==typeof e?(0,s.qX)(e):e.raw instanceof Uint8Array?e.raw:(0,s.O0)(e.raw),u=(0,s.qX)(`Ethereum Signed Message:
+${r.length}`);return(0,a.w)((0,t.zo)([u,r]),n)}}}]);

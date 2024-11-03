@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[95198],{95198:function(n,e,t){t.r(e),t.d(e,{eth_getTransactionCount:function(){return r}});var a=t(65071);async function r(n,e){let t=await n({method:"eth_getTransactionCount",params:[e.address,e.blockNumber?(0,a.eC)(e.blockNumber):e.blockTag||"pending"]});return(0,a.ly)(t)}}}]);
