@@ -103,7 +103,7 @@ function Header( args: argtype) {
           style={{whiteSpace:'pre-line', display:'inline-block', height: '100px'}}
           sequence={[typewriter_contents]}
           speed = {{type:'keyStrokeDelayInMs', value:75}}
-          className="w-[350px]"
+          className="w-[360px]"
         />
       </p>
       <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center cursor-pointer">

@@ -83,23 +83,29 @@ const About: React.FC<argtype> = ({isMobile}) => {
         <p className="mb-5">
           My professional journey has equipped me with research-grade proficiency in {" "}
         <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
+          Rust
+        </code>, {" "}
+        <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
           C++
-        </code>{" "}, {" "}
+        </code>, {" "}
         <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
           Fortran
-        </code>{" "}, and {" "}
+        </code>, and {" "}
         <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
           Python
-        </code>{" "}, and I have used these tools for a range of applications. My research at times involves the collection of extensive (~TB) datasets, and the efficient use of supercomputing resources, such as {" "}
+        </code>, and I have used these tools for a range of applications. My research at times involves the collection of extensive (~TB) datasets, and the efficient use of supercomputing resources, such as {" "}
         <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
           MPI
-        </code>{" "},{" "}
+        </code>,{" "}
         <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
           OpenMP
-        </code>{" "}, and {" "}
+        </code>,
+        <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
+          Tokio/Rayon
+        </code>, and {" "}
         <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
           CUDA
-        </code>{" "}, to extract and analyse the relevant information from the resulting data. 
+        </code>, to extract and analyse the relevant information from the resulting data.
         </p>
         <p className="mb-5">
           My abilities to utilise cutting-edge technology, to analyse and successfully execute solutions to complex problems, and my strong willingness to collaborate with my peers poises me as successful researcher.
