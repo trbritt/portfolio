@@ -16,7 +16,6 @@ import Experience from "@/components/experience";
 import Tech from "@/components/tech";
 import Links from "@/components/links";
 import Works from "@/components/works";
-import FAQ from "@/components/faq";
 import Contact from "@/components/contact";
 import Loader from "@/components/loader";
 import { argtype } from "@/utils/constants";
@@ -78,7 +77,6 @@ export default function Home() {
       <Tech/>
       <Links/>
       <Works/>
-      <FAQ/>
       <Contact/>
       <footer className={`h-10 text-zinc-100 tracking-tighter text-center ${useMobile() ? 'text-sm': 'text-md'} `}>Copright © 2024, Tristan Britt, Ph.D.</footer>
     </main>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { argtype, navLinks } from '../utils/constants';
+import { argtype, navLinks } from "@/utils/constants";
 
 import { motion } from "framer-motion";
 
