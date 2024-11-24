@@ -90,7 +90,7 @@ import {
       icon: python,
     },
     {
-      title: "High Performance Computationalist",
+      title: "HPC Specialist",
       icon: web,
     },
 
@@ -238,7 +238,7 @@ import {
   
   const projects = [
     {
-      name: "Sylow: The Fastest Prover on the Planet for BN254",
+      name: "Sylow: The Fastest Secure Prover on the Planet for BN254",
       description: "Sylow (ˈsyːlɔv) is a comprehensive Rust library for elliptic curve cryptography, specifically tailored for the BN254 ( alt-bn128) curve. It provides a robust implementation of finite fields, elliptic curve groups, and pairing-based cryptography, making it an ideal choice for applications in blockchain, zero-knowledge proofs, and other cryptographic systems",
       tags: [
         {
