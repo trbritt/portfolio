@@ -16,7 +16,6 @@ import Experience from "@/components/experience";
 import Tech from "@/components/tech";
 import Links from "@/components/links";
 import Works from "@/components/works";
-import FAQ from "@/components/faq";
 import Contact from "@/components/contact";
 import Loader from "@/components/loader";
 import { argtype } from "@/utils/constants";
@@ -78,9 +77,8 @@ export default function Home() {
       <Tech/>
       <Links/>
       <Works/>
-      <FAQ/>
       <Contact/>
-      <footer className={`h-10 text-zinc-100 tracking-tighter text-center ${useMobile() ? 'text-sm': 'text-md'} `}>Copyright Tristan Britt, 2024</footer>
+      <footer className={`h-10 text-zinc-100 tracking-tighter text-center ${useMobile() ? 'text-sm': 'text-md'} `}>Copright © 2024, Tristan Britt, Ph.D.</footer>
     </main>
     
   );
@@ -89,13 +87,13 @@ export default function Home() {
 function Header( args: argtype) {
   //typeanimator is memoized once so can't evaluate anything
   //dynamically inside it
-  const typewriter_contents: string = "I write high performance code ...\n ... for high performance research";
+  const typewriter_contents: string = "I write high performance code for high performance research ...";
   return (
     <header id = "hero" className="w-full flex flex-col items-center mb-10 md:mb-20 gap-y-8">
       <div className={`justify-center flex ${args.isMobile ? 'flex-col' : 'flex-row'} items-center`}>
         <h1 className={`text-6xl font-bold tracking-tighter mb-6 text-zinc-100 ${args.isMobile ? 'px-3' : 'px-0'}`}>
         Hi, I&apos;m{" "}
-        <span className="inline-block -skew-x-6 text-[#8693f2]">Tristan, Ph.D. </span>
+        <span className="mt-4 inline-block -skew-x-6 text-[#8693f2]">Tristan, Ph.D. </span>
       </h1>
       </div>
       <p className="text-zinc-300 font-semibold tracking-tighter text-2xl">

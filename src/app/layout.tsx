@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import {Spline_Sans_Mono} from "next/font/google";
 import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
 
-const inter = Inter({ subsets: ["latin"] });
+const splineSansMono = Spline_Sans_Mono({ subsets: ["latin-ext"] });
 
 export const metadata: Metadata = {
   title: "trbritt | portfolio",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={ `${inter.className} bg-tertiary`}>
+      <body className={ `${splineSansMono.className} bg-tertiary`}>
         <ThirdwebProvider >{children}</ThirdwebProvider>
       </body>
     </html>

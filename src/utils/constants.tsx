@@ -39,10 +39,6 @@ import {
       title: "Work",
     },
     {
-      id: "FAQ",
-      title: "FAQ"
-    },
-    {
       id: "contact",
       title: "Contact",
     },
@@ -53,24 +49,9 @@ import {
 
   ];
 
-  const faqs = [
-    {
-      question: "How did you get into physics?",
-      response: "My grandfather was a nuclear physicist in the US and UK, and so he gave me inspiration growing up. Once I developed an appreciation for being able to understand how <i>everything</i> (more or less) worked with physics, it was game over."
-    },
-    {
-      question: "What simulation suites do you have experience in?",
-      response: "Over the years, I've developed experience in simulating a range of physical systems: heat transport, relativistic electron beams, charge transport, ultrafast phonon scattering, RF cavities, etc. They've relied on commercial products like COMSOL, ANSYS, and GPT, as well has home grown simulation suites."
-    },
-    {
-      question: "For what language is it most worth suffering?",
-      response: "Hard number crunching has been my focus for a long time, so <code>C++</code> and <code>Fortran</code> have been taking the top spots. That being said, <code>Rust</code> is the language of the future, and is my primary focus in developing the MEV space."
-    }
-  ];
-  
   const services = [
     {
-      title: "Blockchain researcher",
+      title: "Blockchain Researcher",
       icon: ethereum,
     },
     {
@@ -78,7 +59,7 @@ import {
       icon: creator,
     },
     {
-      title: "Rust developer",
+      title: "Rust Developer",
       icon: rust,
     },
     {
@@ -90,7 +71,7 @@ import {
       icon: python,
     },
     {
-      title: "High Performance Computationalist",
+      title: "HPC Specialist",
       icon: web,
     },
 
@@ -100,30 +81,27 @@ import {
       title: "Github",
       icon: github,
       source_code_link: "https://github.com/trbritt",
-
     },
     {
       title: "ORCID",
       icon: orcid,
       source_code_link: "https://orcid.org/0000-0002-2617-8857",
-
     },
     {
       title: "LinkedIn",
       icon: linkedin,
       source_code_link: "https://www.linkedin.com/in/tristan-britt-282313112/",
-
     },
   ];
   
-  const technologies = [    
-    {
-      name: "Cpp",
-      icon: Cpp,
-    },
+  const technologies = [
     {
       name: "Rust",
       icon: rust
+    },
+    {
+      name: "Cpp",
+      icon: Cpp,
     },
     {
       name: "Linux",
@@ -132,19 +110,18 @@ import {
     {
       name: "Python",
       icon: python,
-    }, 
-    {
-      name: "Solidity",
-      icon: solidity,
-    },
-    
-    {
-      name: "Golang",
-      icon: go,
     },
     {
       name: "Fortran",
       icon: fortran,
+    },
+    {
+      name: "Solidity",
+      icon: solidity,
+    },
+    {
+      name: "Golang",
+      icon: go,
     },
     {
       name: "C",
@@ -162,11 +139,21 @@ import {
   
   const experiences = [
     {
+      title: "Head of Research",
+      company_name: "Warlock Labs",
+      icon: warlock,
+      iconBg: "#E6DEDD",
+      date: "November 2024 - Present",
+      points: [
+        "Leading the research division in researching, developing, and implementing technical algorithmic strategies in cryptography, convex optimization, network theory, and more."
+      ]
+    },
+    {
       title: "Senior Research Engineer",
       company_name: "Warlock Labs",
       icon: warlock,
       iconBg: "#E6DEDD",
-      date: "June 2024 - Present",
+      date: "June 2024 - November 2024",
       points: [
         "Performing research and developing strategies on reintermediating MEV and OEV, developing novel statistical and atomic arbitrage strategies, liquidation detection, and cutting-edge cryptography research"
       ]
@@ -238,7 +225,7 @@ import {
   
   const projects = [
     {
-      name: "Sylow: The Fastest Prover on the Planet for BN254",
+      name: "Sylow: The Fastest Secure Prover on the Planet for BN254",
       description: "Sylow (ˈsyːlɔv) is a comprehensive Rust library for elliptic curve cryptography, specifically tailored for the BN254 ( alt-bn128) curve. It provides a robust implementation of finite fields, elliptic curve groups, and pairing-based cryptography, making it an ideal choice for applications in blockchain, zero-knowledge proofs, and other cryptographic systems",
       tags: [
         {
@@ -366,4 +353,4 @@ import {
 export type argtype = {
     isMobile: boolean
 }
-export { services, technologies, experiences, projects, social_links, faqs };
+export { services, technologies, experiences, projects, social_links };
