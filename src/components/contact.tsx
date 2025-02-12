@@ -60,7 +60,7 @@ interface FormState {
       <>
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
-          className={`flex-[0.75] bg-quartary p-8 rounded-2xl ${isMobile ? 'mx-3' : 'mx-10'} mt-10 mb-20`}
+          className={`flex-[0.75] bg-quartary border-outline border-2 p-8 rounded-2xl ${isMobile ? 'mx-3' : 'mx-10'} mt-10 mb-20`}
         >
           <p className="text-4xl font-bold text-zinc-100 ">Get in touch</p>
           <h3 className="text-3xl font-semibold text-zinc-10 mb-10">Contact.</h3>
@@ -73,7 +73,7 @@ interface FormState {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="What's your name?"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary/70 text-secondary rounded-lg border-outline/45 border-2 font-medium"
               />
             </label>
             <label className="flex flex-col">
@@ -84,7 +84,7 @@ interface FormState {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="What's your email address?"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary/70 text-secondary rounded-lg border-outline/45 border-2 font-medium"
               />
             </label>
             <label className="flex flex-col">
@@ -95,12 +95,12 @@ interface FormState {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="What do you want to say?"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                className="bg-tertiary py-4 px-6 placeholder:text-secondary/70 text-secondary rounded-lg border-outline/45 border-2 font-medium"
               />
             </label>
             <button
               type="submit"
-              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+              className="bg-tertiary py-3 px-8 rounded-xl border-outline/45 border-2 w-fit text-white font-bold shadow-md shadow-primary"
             >
               {loading ? "Sending..." : "Send"}
             </button>

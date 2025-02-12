@@ -1,11 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { argtype, services } from "../utils/constants";
+import { argtype, services } from "@/utils/constants";
 import SectionWrapper  from "../utils/section";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, textVariant } from "@/utils/motion";
 import { StaticImageData } from "next/image";
 import ExportedImage from "next-image-export-optimizer";
-import { useState, useEffect } from "react";
 
 // Define a type for the service
 export type Service = {
@@ -50,7 +49,7 @@ const usePointerGlow = (): [PointerStatus | null] => {
 // ServiceCard component with TypeScript annotations
 const ServiceCard: React.FC<Service> = ({ title, icon }) => (
   <div className='xs:w-[250px] w-full'>
-    <article className="shadow-card bg-quartary w-full p-[1px] rounded-[20px]">
+    <article className="shadow-card bg-quartary w-full p-[1px] rounded-[20px] border-outline border-2">
       <div
         className='py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
       >

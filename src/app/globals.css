@@ -46,12 +46,12 @@ body {
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   
-  .violet-gradient {
-	background: #8693f2;
-	background: linear-gradient(-90deg, #8693f2 0%, rgba(60, 51, 80, 0) 100%);
+  .green-gradient {
+	background: #69b994;
+	background: linear-gradient(-90deg, #69b994 0%, rgba(60, 51, 80, 0) 100%);
 	background: -webkit-linear-gradient(
 	  -90deg,
-	  #8693f2 0%,
+	  #69b994 0%,
 	  rgba(60, 51, 80, 0) 100%
 	);
   }

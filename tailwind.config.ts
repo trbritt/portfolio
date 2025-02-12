@@ -16,12 +16,13 @@ const config: Config = {
       },
       colors: {
         primary: "#050816",
-        secondary: "#e9dfe5",
-        tertiary: "#151030",
-        quartary: "#1d1836",
+        secondary: "#c9dddc",
+        tertiary: "#050907",
+        quartary: "#01120f",
+        outline: "#6abc96",
         "black-100": "#100d25",
         "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        "white-100": "#dce4e2",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
