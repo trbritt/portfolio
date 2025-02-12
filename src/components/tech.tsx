@@ -2,7 +2,7 @@
 import React from 'react';
 import  BallCanvas  from './balls';
 import  SectionWrapper  from '../utils/section';
-import  {argtype, technologies}  from '../utils/constants';
+import  {argtype, technologies}  from "@/utils/constants";
 import { StaticImageData } from 'next/image';
 // types.ts
 export interface Technology {

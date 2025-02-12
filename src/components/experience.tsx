@@ -2,9 +2,9 @@ import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { motion } from 'framer-motion';
 import 'react-vertical-timeline-component/style.min.css';
-import { argtype, experiences } from '../utils/constants';
+import { argtype, experiences } from "@/utils/constants";
 import  SectionWrapper  from '../utils/section';
-import { textVariant } from '../utils/motion';
+import { textVariant } from "@/utils/motion";
 import ExportedImage from "next-image-export-optimizer";
 import { StaticImageData } from "next/image";
 

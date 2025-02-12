@@ -2,7 +2,7 @@ import React, { useRef, useState, ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import SectionWrapper  from "../utils/section";
-import { slideIn } from "../utils/motion";
+import { slideIn } from "@/utils/motion";
 import { argtype } from "@/utils/constants";
 
 interface FormState {
