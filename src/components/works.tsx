@@ -30,7 +30,7 @@ interface ProjectCardProps extends Project {
     return (
       <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
         <article
-          className={`bg-quartary p-5 rounded-2xl ${isMobile ? 'w-full' : 'w-3/4'} tracking-tight`}
+          className={`bg-quartary border-outline border-2 p-5 rounded-2xl ${isMobile ? 'w-full' : 'w-3/4'} tracking-tight`}
         >
           <div className='relative w-full h-[230px]'>
             <ExportedImage
@@ -42,7 +42,7 @@ interface ProjectCardProps extends Project {
             <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
               <div
                 onClick={() => window.open(source_code_link, "_blank")}
-                className='violet-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+                className='green-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
               >
                 <ExportedImage
                   src={external_link}

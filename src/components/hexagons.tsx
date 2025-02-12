@@ -56,7 +56,7 @@ function Hexagons(args: inputTypes){
     const setup = (p5:p5Types, canvasParentRef: Element) => {
         p5.createCanvas(Math.max(document.getElementById("hero")?.clientWidth || 0, window.innerWidth || 0), Math.max(document.getElementById("hero")?.clientHeight || 0, window.innerHeight || 0)).parent(canvasParentRef);
 
-        p5.background('#151030');
+        p5.background('#050907');
 
         seed = cyrb128("SEXXX");
         rand = mulberry32(seed[0]);
@@ -77,7 +77,7 @@ function Hexagons(args: inputTypes){
     }
 
     const draw = (p5: p5Types) => {
-        p5.background('#151030');
+        p5.background('#050907');
         const decriment = [0.01, 0.008];
         for (let j = 0; j < n_gons; j += 1) {
             const start_ramp = p5.color(colors_hex[j][0]);

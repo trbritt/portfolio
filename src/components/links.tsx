@@ -20,7 +20,7 @@ export interface SocialLink {
   const SocialLinkCard: React.FC<SocialLinkCardProps> = ({ index, title, icon, source_code_link }) => (
     <div className='xs:w-[250px] w-full'>
       <article
-        className='w-full p-[1px] rounded-[20px] shadow-card bg-quartary cursor-pointer'
+        className='w-full p-[1px] rounded-[20px] shadow-card bg-quartary cursor-pointer border-outline border-2'
         onClick={() => window.open(source_code_link, "_blank")}
       >
         <div

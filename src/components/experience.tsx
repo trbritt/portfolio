@@ -22,8 +22,8 @@ export interface Experience {
 
   const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => (
     <VerticalTimelineElement
-      contentStyle={{ background: '#1d1836', color: '#fff' }}
-      contentArrowStyle={{ borderRight: '7px solid #232631' }}
+      contentStyle={{ background: '#01120f', color: '#fff', border: "2px solid #6abc96"}}
+      contentArrowStyle={{ borderRight: '7px solid #6abc96' }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={

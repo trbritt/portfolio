@@ -1,15 +1,7 @@
 'use client'
-// import {
-  // createWallet,
-  // walletConnect,
-  // inAppWallet,
-// } from "thirdweb/wallets";
-// import { ConnectButton } from "thirdweb/react";
+
 import React, { Suspense } from "react";
 import dynamic from 'next/dynamic'
-// import { client } from "./client";
-// import  Component  from "./component";
-// import TXButtons from "./tx_button";
 import Navbar from "@/components/navbar";
 import About from "@/components/about";
 import Experience from "@/components/experience";
@@ -23,29 +15,10 @@ import { useMobile } from "@/utils/section";
 import { TypeAnimation } from "react-type-animation";
 import Resume from "@/components/assets/Tristan_Britt_Resume.pdf";
 
-// import DonateButton from "@/components/modal";
-
 const Hexagons = dynamic(
   () => import ("@/components/hexagons"),
   {ssr: false}
 )
-// const wallets = [
-//   createWallet("io.metamask"),
-//   createWallet("com.coinbase.wallet"),
-//   walletConnect(),
-//   inAppWallet({
-//     auth: {
-//       options: [
-//         "email",
-//         "google",
-//         "apple",
-//         "facebook",
-//         "phone",
-//       ],
-//     },
-//   }),
-// ];
-
 
 export default function Home() {
   return (
@@ -60,17 +33,6 @@ export default function Home() {
       </div>
       <div className={`py-20 absolute inset-0 ${useMobile() ? 'top-[20px]' : 'top-[120px]'}`}>
         <Header isMobile={useMobile()}/>
-        {/* <div className="flex flex-col items-center">
-          <ConnectButton
-            client={client}
-            wallets={wallets}
-            theme={"dark"}
-            connectModal={{size: "wide"}}
-          />
-          <Component/>
-          <DonateButton/>
-          <TXButtons/>
-        </div> */}
       </div>
       <About/>
       <Experience/>
@@ -78,7 +40,7 @@ export default function Home() {
       <Links/>
       <Works/>
       <Contact/>
-      <footer className={`h-10 text-zinc-100 tracking-tighter text-center ${useMobile() ? 'text-sm': 'text-md'} `}>Copright © 2024, Tristan Britt, Ph.D.</footer>
+      <footer className={`h-10 text-zinc-100 tracking-tighter text-center ${useMobile() ? 'text-sm': 'text-md'} `}>Copyright © 2025, Tristan Britt, Ph.D.</footer>
     </main>
     
   );
@@ -93,7 +55,7 @@ function Header( args: argtype) {
       <div className={`justify-center flex ${args.isMobile ? 'flex-col' : 'flex-row'} items-center`}>
         <h1 className={`text-6xl font-bold tracking-tighter mb-6 text-zinc-100 ${args.isMobile ? 'px-3' : 'px-0'}`}>
         Hi, I&apos;m{" "}
-        <span className="mt-4 inline-block -skew-x-6 text-[#8693f2]">Tristan, Ph.D. </span>
+        <span className="mt-4 inline-block -skew-x-6 text-[#7DDCB0FF]">Tristan, Ph.D. </span>
       </h1>
       </div>
       <p className="text-zinc-300 font-semibold tracking-tighter text-2xl">
@@ -107,7 +69,6 @@ function Header( args: argtype) {
       <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center cursor-pointer">
           <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
           <a download="Tristan_Britt_Resume.pdf" href={Resume}>Download Resume</a>
-          {/* <span className="cursor-pointer" onClick={() => {return <iframe src="/src/components/assets/Tristan_Britt_Resume.pdf"/>}}>Download Resume</span> */}
       </button>
     </header>
   );

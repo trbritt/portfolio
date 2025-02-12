@@ -21,7 +21,7 @@ const Navbar: React.FC<argtype> = ({isMobile}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <nav className={`violet-gradient w-full flex items-center py-5 content-center fixed top-0 z-20 backdrop-blur-sm backgrop-filter`}>
+    <nav className={`green-gradient w-full flex items-center py-5 content-center fixed top-0 z-20 backdrop-blur-sm backgrop-filter`}>
       <div className='w-full flex justify-center max-w-7xl mx-auto'>
         {/* <Image src={trace} alt="logo" className='w-16 h-16 object-contain cursor-pointer' onClick={() => { setActive(''); window.scrollTo(0, 0); }}/> */}
         <ul className='hidden sm:flex flex-row gap-10 font-semibold md:font-bold content-center text-lg'>
