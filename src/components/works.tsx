@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, textVariant } from "@/utils/motion";
 import Latex from 'react-latex-next';
 import SectionWrapper from "../utils/section";
 import { argtype, projects } from "@/utils/constants";

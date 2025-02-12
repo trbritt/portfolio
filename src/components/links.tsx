@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import  SectionWrapper  from '../utils/section';
-import { fadeIn, textVariant } from '../utils/motion';
-import { argtype, social_links } from '../utils/constants';
+import { fadeIn, textVariant } from "@/utils/motion";
+import { argtype, social_links } from "@/utils/constants";
 import { StaticImageData } from 'next/image';
 import ExportedImage from "next-image-export-optimizer";
 
