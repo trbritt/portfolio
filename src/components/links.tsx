@@ -43,8 +43,8 @@ const Links: React.FC<argtype> = ({isMobile}) => {
   return (
     <>
       <motion.div variants={textVariant(0)} custom={100} initial="initial" animate="final" className={`${isMobile ? 'mx-3' : 'mx-10'}`}>
-        <p className="text-4xl font-bold text-zinc-100 mt-10">My links</p>
-        <h2 className="text-3xl font-semibold text-zinc-10">Socials.</h2>
+        <p className="text-4xl font-bold text-zinc-100 mt-10">Links and Socials</p>
+        {/*<h2 className="text-3xl font-semibold text-zinc-10">Socials.</h2>*/}
       </motion.div>
 
       <div className={`${isMobile ? 'mx-3' : 'mx-10'}w-full flex`}>
