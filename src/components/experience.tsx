@@ -49,10 +49,10 @@ export interface Experience {
     return (
       <>
         <motion.div variants={textVariant(0)} custom={100} initial="initial" animate="final" className={`${isMobile ? 'mx-3' : 'mx-10'} mt-20`}>
-          <p className="text-4xl font-bold text-zinc-100 ">What I&apos;ve done so far</p>
-          <h2 className="text-3xl font-semibold text-zinc-10">
-            Experience.
-          </h2>
+          <p className="text-4xl font-bold text-zinc-100 ">Experience</p>
+          {/*<h2 className="text-3xl font-semibold text-zinc-10">*/}
+          {/*  Experience.*/}
+          {/*</h2>*/}
         </motion.div>
         <div className='mt-20 flex flex-col tracking-tight'>
           <VerticalTimeline>

@@ -70,17 +70,17 @@ const About: React.FC<argtype> = ({isMobile}) => {
     <>
       <motion.div variants={textVariant(0)} custom={100} initial="initial" animate="final" className={`${isMobile ? 'mx-3' : 'mx-10'}`}>
             <p className="text-4xl font-bold text-zinc-100 ">Introduction</p>
-            <h2 className="text-3xl font-semibold text-zinc-10 mb-10">Overview.</h2>
+            {/*<h2 className="text-3xl font-semibold text-zinc-10 mb-10">Overview.</h2>*/}
       </motion.div>
       <motion.div
         variants={fadeIn("down", "", 0.1, 1)}
         className={`mt-4 tracking-tight text-[17px] max-w-3xl leading-[30px] mb-6 text-zinc mb-20 ${isMobile ? 'mx-3' : 'mx-10'}`} custom={100} initial="initial" animate="final"
       >
         <p className="mb-5">
-          Acquiring my doctorate (PhD) in Physics at McGill University enforced my high attention to detail, sharpened my analytical reasoning, and gave me robust and extensive backgrounds in Mathematics, Statistics, Programming, and high-quality real-time research. 
+          As a doctor of physics, my research focused on high performance computation, and the optimization of advanced quantum mechanical simulations, affording me with in-depth technical knowledge of a wide range of physical, algorithmic, and mathematical principles and innovations.
         </p>
         <p className="mb-5">
-          My professional journey has equipped me with research-grade proficiency in {" "}
+          Over my career, I have developed research-grade proficiency in {" "}
         <code className="bg-zinc-800 text-zinc-300 px-2 rounded py-1 text-sm mx-1">
           Rust
         </code>, {" "}
@@ -108,6 +108,10 @@ const About: React.FC<argtype> = ({isMobile}) => {
         </p>
         <p className="mb-5">
           My abilities to utilise cutting-edge technology, to analyse and successfully execute solutions to complex problems, and my strong willingness to collaborate with my peers poises me as successful researcher.
+        </p>
+
+        <p className="mb-5">
+          I currently focus my research on cryptography, atomic and statistical arbitrage, convex optimization, and network / graph theory.
         </p>
       </motion.div>
 

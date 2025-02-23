@@ -63,7 +63,7 @@ interface FormState {
           className={`flex-[0.75] bg-quartary border-outline border-2 p-8 rounded-2xl ${isMobile ? 'mx-3' : 'mx-10'} mt-10 mb-20`}
         >
           <p className="text-4xl font-bold text-zinc-100 ">Get in touch</p>
-          <h3 className="text-3xl font-semibold text-zinc-10 mb-10">Contact.</h3>
+          {/*<h3 className="text-3xl font-semibold text-zinc-10 mb-10">Contact.</h3>*/}
           <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8 tracking-tight">
             <label className="flex flex-col">
               <span className="text-white font-medium mb-4">Your Name</span>
@@ -72,7 +72,7 @@ interface FormState {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="What's your name?"
+                placeholder="Name?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary/70 text-secondary rounded-lg border-outline/45 border-2 font-medium"
               />
             </label>
@@ -83,7 +83,7 @@ interface FormState {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="What's your email address?"
+                placeholder="Email?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary/70 text-secondary rounded-lg border-outline/45 border-2 font-medium"
               />
             </label>
@@ -94,7 +94,7 @@ interface FormState {
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="What do you want to say?"
+                placeholder="What's up?"
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary/70 text-secondary rounded-lg border-outline/45 border-2 font-medium"
               />
             </label>
