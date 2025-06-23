@@ -5,6 +5,10 @@ const nextConfig = {
     images: {
      unoptimized: true
     },
+    // Set the correct base path to work with GitHub Pages
+    basePath: '',
+    // This ensures assets are properly referenced
+    assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
     // Enable SWC minification for faster builds
     swcMinify: true,
     // Optimize fonts
@@ -13,13 +17,30 @@ const nextConfig = {
     compress: true,
     // Enable experimental features
     experimental: {
-      // Optimize CSS
-      optimizeCss: true,
-      // Modern JS features
-      esmExternals: true,
+        // Optimize CSS
+        optimizeCss: true,
+        // Modern JS features
+        esmExternals: true,
     },
-    basePath: '',
-    assetPrefix: process.env.NODE_ENV === 'production' ? '' : undefined,
+    // This ensures that images work with the export
+    trailingSlash: true, // Important for static site generation
+    // Webpack config for handling any special loaders
+    webpack: (config) => {
+        config.module.rules.push({
+            test: /\.(pdf|ico|svg)$/,
+            use: [
+                {
+                    loader: 'file-loader',
+                    options: {
+                        publicPath: '/_next/static/files/',
+                        outputPath: 'static/files/',
+                        name: '[name].[hash].[ext]',
+                    },
+                },
+            ],
+        });
+        return config;
+    },
 }
   
   module.exports = nextConfig

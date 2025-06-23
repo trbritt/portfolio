@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import TerminalText from "./TerminalText";
 import ContactModal from "./ContactModal";
 
 type SocialLink = {
@@ -85,19 +84,21 @@ const ContactLinks = ({ links, email }: ContactLinksProps) => {
                   <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-gray-500"></div>
                   <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-gray-500"></div>
 
+                  {/* Fix image path to ensure it works in static export */}
                   <Image
-                    src={`/${link.icon}`}
-                    alt={link.name}
-                    width={24}
-                    height={24}
-                    className="transition-transform hover:scale-110"
+                      src={link.icon.startsWith('/') ? link.icon : `/${link.icon}`}
+                      alt={link.name}
+                      width={24}
+                      height={24}
+                      className="transition-transform hover:scale-110"
+                      unoptimized={true}
                   />
                 </a>
 
                 {/* Hover text label */}
                 {hoveredLink === link.name && (
                   <div
-                    className="absolute left-1/2 transform -translate-x-1/2 -bottom-8 
+                    className="absolute left-1/2 transform -translate-x-1/2 -bottom-8
                                bg-gray-800 px-2 py-1 text-xs whitespace-nowrap z-10
                                border border-gray-700 text-[#6ABC96]"
                   >
@@ -140,7 +141,7 @@ const ContactLinks = ({ links, email }: ContactLinksProps) => {
               {/* Hover text label */}
               {hoveredLink === "contact" && (
                 <div
-                  className="absolute left-1/2 transform -translate-x-1/2 -bottom-8 
+                  className="absolute left-1/2 transform -translate-x-1/2 -bottom-8
                              bg-gray-800 px-2 py-1 text-xs whitespace-nowrap z-10
                              border border-gray-700 text-[#6ABC96]"
                 >
