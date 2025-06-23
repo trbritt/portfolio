@@ -34,6 +34,7 @@ jobs:
           # Set your domain for proper asset paths
           NEXT_PUBLIC_BASE_URL: https://tbritt.xyz
 
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
