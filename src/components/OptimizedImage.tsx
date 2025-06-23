@@ -95,6 +95,7 @@ const OptimizedImage = ({
           } transition-opacity duration-300`}
           onLoad={() => setIsLoaded(true)}
           onError={handleError}
+          unoptimized={true}
         />
       )}
 
