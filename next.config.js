@@ -19,6 +19,7 @@ const nextConfig = {
       esmExternals: true,
     },
     basePath: '',
+    assetPrefix: process.env.NODE_ENV === 'production' ? '' : undefined,
 }
   
   module.exports = nextConfig
