@@ -25,12 +25,15 @@ jobs:
           node-version: 20.19.2
 
       - name: Install dependencies
-        run:  pnpm i
+        run: pnpm i
 
       - name: Build project
         run: pnpm build
         env:
           NODE_ENV: production
+          # Set your domain for proper asset paths
+          NEXT_PUBLIC_BASE_URL: https://tbritt.xyz
+
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
@@ -53,13 +56,16 @@ jobs:
           name: production-files
           path: ./out
       - name: add-domain-cname
-        run: echo "tbritt.xyz" > ./out/CNAME
+        run: |
+          # Create CNAME file
+          echo "tbritt.xyz" > ./out/CNAME
+          # Create .nojekyll file to prevent Jekyll processing
+          touch ./out/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          name: production-files
           publish_branch: gh-pages
           force_orphan: true
