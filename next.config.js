@@ -17,7 +17,8 @@ const nextConfig = {
       optimizeCss: true,
       // Modern JS features
       esmExternals: true,
-    }
-  }
+    },
+    basePath: '',
+}
   
   module.exports = nextConfig
