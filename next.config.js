@@ -8,7 +8,7 @@ const nextConfig = {
     // Set the correct base path to work with GitHub Pages
     basePath: '',
     // This ensures assets are properly referenced
-    assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+    assetPrefix: './',
     // Enable SWC minification for faster builds
     swcMinify: true,
     // Optimize fonts
