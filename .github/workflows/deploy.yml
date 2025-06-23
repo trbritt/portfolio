@@ -41,6 +41,7 @@ jobs:
             echo "Checking for specific images:"
             find ./out -name "*.png" -o -name "*.jpg" -o -name "*.svg" | sort
 
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
         with:
