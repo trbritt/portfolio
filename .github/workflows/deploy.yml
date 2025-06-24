@@ -30,7 +30,6 @@ jobs:
       - name: Build project
         run: pnpm build
         env:
-          NODE_ENV: production
           # Set your domain for proper asset paths
           NEXT_PUBLIC_BASE_URL: https://tbritt.xyz
 
@@ -40,21 +39,6 @@ jobs:
             ls -la ./out
             echo "Checking for specific images:"
             find ./out -name "*.png" -o -name "*.jpg" -o -name "*.svg" | sort
-
-      - name: Copy images to output directory
-        run: |
-          echo "Ensuring images directory exists in output"
-          mkdir -p ./out/images
-          
-          # Copy all image files from public to out
-          echo "Copying images from public directory to out directory"
-          cp -rv ./public/*.png ./public/*.jpg ./public/*.svg ./public/*.ico ./out/ 2>/dev/null || true
-          
-          # List the output directory after copying
-          echo "Output directory after copying images:"
-          ls -la ./out
-          echo "Image files in output:"
-          find ./out -name "*.png" -o -name "*.jpg" -o -name "*.svg" -o -name "*.ico" | sort
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v4
