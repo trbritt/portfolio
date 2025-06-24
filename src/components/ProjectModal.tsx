@@ -139,7 +139,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
         {/* Modal header */}
         <div className="flex justify-between items-center border-b border-gray-700 p-4 flex-shrink-0">
           <div className="flex items-center">
-            <div className="max-w-[80px] mr-2 px-2 py-1 bg-[#6ABC96] text-black text-xs font-bold">
+            <div className="max-w-[90px] mr-2 px-2 py-1 bg-[#6ABC96] text-black text-xs font-bold">
               {contentType} {project?.code}
             </div>
             <h3 className="text-gray-200 text-md truncate max-w-[150px] md:max-w-sm">{project?.title}</h3>

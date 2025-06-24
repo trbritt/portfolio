@@ -222,7 +222,7 @@ const Portfolio = () => {
 
             {/* Hexagon visualization */}
             {isMobile ? (
-              <div className="relative w-full min-h-[400px] flex-grow mb-6 pb-6">                   
+              <div className="relative w-full min-h-[500px] flex-grow mb-6 pb-6">                   
                 <div className="text-xs text-gray-400 max-w-s absolute top-10 left-4">
                   <TerminalText
                     text={current_focus.paragraphOne}
