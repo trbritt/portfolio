@@ -26,7 +26,7 @@ const projects = [
     technologies: ["Cryptography", "SecOps", "HPC", "Rust"],
     duration: "6 months",
     role: "Lead Architect and Developer",
-    image: "/sylow.png",
+    image: "/images/sylow.png",
     achievements: [
       "Sub 6 ms optimal ate pairing time",
       "No critical vulnerabilities in Rust or Solidity implementations as reported by Zellic and Least Authority audits",
@@ -45,7 +45,7 @@ const projects = [
     technologies: ["Fortran", "C++", "Python", "Fundamental Research"],
     duration: "1 year",
     role: "Lead Researcher",
-    image: "/npjcomp_mat.png",
+    image: "/images/npjcomp_mat.png",
     achievements: [],
     externalLink: "https://www.nature.com/articles/s41524-024-01",
   },
@@ -61,7 +61,7 @@ const projects = [
     technologies: ["Fortran", "Python", "Fundamental Research"],
     duration: "1 year",
     role: "Lead Researcher",
-    image: "/prb.png",
+    image: "/images/prb.png",
     achievements: [],
     externalLink:
       "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.107.214306",
@@ -84,7 +84,7 @@ const projects = [
     ],
     duration: "2 years",
     role: "Lead Researcher",
-    image: "/nanolett.png",
+    image: "/images/nanolett.png",
     achievements: [],
     externalLink: "https://pubs.acs.org/doi/10.1021/acs.nanolett.2c00850",
   },
@@ -101,7 +101,7 @@ const experiences = [
       "Leading the research division in researching, developing, and implementing technical algorithmic strategies in cryptography, convex optimization, network theory, and more.",
     technologies: ["Rust", "Ethereum Mainnet", "Cryptography", "DeFi"],
     duration: "December 2024 - Present",
-    image: "/sylow.png",
+    image: "/images/sylow.png",
     achievements: [],
   },
   {
@@ -113,7 +113,7 @@ const experiences = [
       "Performing research and developing strategies on reintermediating MEV and OEV, developing novel statistical and atomic arbitrage strategies, liquidation detection, and cutting-edge cryptography research",
     technologies: ["Rust", "Ethereum Mainnet", "Cryptography", "DeFi"],
     duration: "June 2024 - December 2024",
-    image: "/sylow.png",
+    image: "/images/sylow.png",
     achievements: [],
   },
   {
@@ -126,7 +126,7 @@ const experiences = [
       "Providing industry and research perspective on best practices and features for realistic customer use as a replacement of LabVIEW",
     technologies: ["Python", "FastAPI", "Redis", "C++"],
     duration: "Jan 2023 - June 2024",
-    image: "/flojoy.png",
+    image: "/images/flojoy.png",
     achievements: [],
   },
   {
@@ -139,7 +139,7 @@ const experiences = [
       "Designed the dipole magnet currently used in the Low Energy election Cooling Beamline upgrade to the Relativistic Heavy Ion Collider (RHIC) to reduce power used cooling relativistic particles by >30%, and Designed and simulated the measurement magnet currently used in the High Luminosity upgrade to the Large Hadron Collider (HL-LHC) at CERN, Switzerland, aﬀording > 20% increase in magnetic sensitvity",
     technologies: ["Opera", "Roxy", "C++", "Python"],
     duration: "March 2018 - August 2018",
-    image: "/BNL.png",
+    image: "/images/BNL.png",
     achievements: [],
   },
   {
@@ -152,7 +152,7 @@ const experiences = [
       "Designed, simulated, and manufactured a high Q-factor RF cavity for cryogenic use in the global Axion Dark Matter eXperiment (ADMX) collaboration, with participants in Korea, USA, and at CERN, Switzerland",
     technologies: ["Comsol", "Ansys", "C++", "Python"],
     duration: "June 2017 - August 2017",
-    image: "/KAIST.png",
+    image: "/images/KAIST.png",
     achievements: [],
   },
 ];
@@ -219,19 +219,19 @@ const skills = {
 const social_links = [
     {
       name: "GitHub",
-      icon: "github.png",
+      icon: "/images/github.png",
       url: "https://github.com/trbritt",
       hoverText: "View Code Repositories"
     },
     {
       name: "LinkedIn",
-      icon: "linkedin.png",
+      icon: "/images/linkedin.png",
       url: "https://linkedin.com/in/trbritt",
       hoverText: "Professional Network"
     },
     {
       name: "ORCID",
-      icon: "orcid.png",
+      icon: "/images/orcid.png",
       url: "https://orcid.org/0000-0002-2617-8857",
       hoverText: "Academic Publications"
     }

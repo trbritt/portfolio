@@ -31,9 +31,6 @@ const OptimizedImage = ({
   const [hasError, setHasError] = useState(false);
   const [showGlitch, setShowGlitch] = useState(false);
 
-  // Ensure src path is correct for GitHub Pages
-  const imageSrc = src.startsWith('/') ? src : `/${src}`;
-
   // Reduce effects on mobile devices
   const isMobile = typeof window !== "undefined" ? isMobileDevice() : false;
   const shouldApplyEffects = !isMobile;
@@ -54,7 +51,7 @@ const OptimizedImage = ({
   const handleError = () => {
     setHasError(true);
     setIsLoaded(true);
-    console.error(`Failed to load image: ${imageSrc}`);
+    console.error(`Failed to load image: ${src}`);
   };
 
   return (
@@ -78,7 +75,7 @@ const OptimizedImage = ({
                   <>
                     <div className="text-[#6ABC96] text-xs mb-1">IMAGE ERROR</div>
                     <div className="text-xs text-gray-500">
-                      Unable to load resource: {imageSrc}
+                      Unable to load resource: {src}
                     </div>
                   </>
               )}
@@ -88,7 +85,7 @@ const OptimizedImage = ({
         {/* Actual image */}
         {!hasError && (
             <Image
-                src={imageSrc}
+                src={src}
                 alt={alt}
                 width={width}
                 height={height}

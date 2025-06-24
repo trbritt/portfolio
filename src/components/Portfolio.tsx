@@ -129,11 +129,11 @@ const Portfolio = () => {
     <div className="min-h-screen bg-[#111111] text-gray-200 font-mono p-4 flex flex-col">
       <div className="border border-gray-700 flex-grow flex flex-col relative min-h-[calc(100vh-2rem)]">
         {/* Top border corner brackets */}
-        <div className="absolute fixed top-0 left-0 w-8 h-8 border-t border-l border-gray-500"></div>
-        <div className="absolute fixed top-0 right-0 w-8 h-8 border-t border-r border-gray-500"></div>
+        <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-gray-500"></div>
+        <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-gray-500"></div>
         {/* Bottom brackets now use fixed positioning for small screens and absolute for larger screens */}
-        <div className="absolute fixed bottom-0 left-0 w-8 h-8 border-b border-l border-gray-500"></div>
-        <div className="absolute fixed bottom-0 right-0 w-8 h-8 border-b border-r border-gray-500"></div>
+        <div className="absolute bottom-0 left-0 w-8 h-8 border-b border-l border-gray-500"></div>
+        <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-gray-500"></div>
 
         {/* Main grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-1 p-4 flex-grow pb-0">
@@ -148,7 +148,7 @@ const Portfolio = () => {
               <div className="w-full aspect-square bg-gray-800 mb-4 flex items-center justify-center">
                 {/* Avatar placeholder with optimized image */}
                 <OptimizedImage
-                  src="/headshot.png"
+                  src="/images/headshot.png"
                   alt="Developer profile"
                   width={330}
                   height={330}

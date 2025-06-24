@@ -7,8 +7,6 @@ const nextConfig = {
     },
     // Set the correct base path to work with GitHub Pages
     basePath: '',
-    // This ensures assets are properly referenced
-    assetPrefix: './',
     // Enable SWC minification for faster builds
     swcMinify: true,
     // Optimize fonts
@@ -22,8 +20,6 @@ const nextConfig = {
         // Modern JS features
         esmExternals: true,
     },
-    // This ensures that images work with the export
-    trailingSlash: true, // Important for static site generation
     // Webpack config for handling any special loaders
     webpack: (config) => {
         config.module.rules.push({
