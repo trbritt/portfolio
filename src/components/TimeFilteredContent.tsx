@@ -137,7 +137,7 @@ const TimeFilteredContent = ({
       {/* Time filter */}
       <div className="border border-gray-700 p-4">
         <div className="flex justify-between items-center">
-          {isMobileDevice() ? (<div className="text-xs">{getContentLabel()}</div>) : (<div className="text-sm">{getContentLabel()}</div>)}
+          {!isMobileDevice() ? (<div className="text-xs">{getContentLabel()}</div>) : (<></>)}
           <div className="flex gap-1 text-xs">
             {[
               { key: 'experience', label: 'Experience' },
