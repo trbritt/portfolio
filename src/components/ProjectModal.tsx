@@ -111,16 +111,17 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
   // Content type specific label
   const contentType = getContentType();
 
+  // CSS animations and custom scrollbar styles
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity max-h-7/8 duration-300 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-300 ${
         isAnimatingOut ? "opacity-0" : "opacity-100 bg-opacity-80"
       }`}
       style={{ backdropFilter: "blur(2px)" }}
     >
       <div
         ref={modalRef}
-        className={`relative w-11/12 max-w-3xl bg-[#111111] border border-gray-700 transition-all duration-300 overflow-hidden
+        className={`relative w-11/12 max-w-3xl max-h-[75vh] bg-[#111111] border border-gray-700 transition-all duration-300 flex flex-col
           ${
             isAnimatingOut
               ? "scale-95 translate-y-10 opacity-0"
@@ -136,16 +137,16 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
         <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-gray-500 z-10"></div>
 
         {/* Modal header */}
-        <div className="flex justify-between items-center border-b border-gray-700 p-4">
+        <div className="flex justify-between items-center border-b border-gray-700 p-4 flex-shrink-0">
           <div className="flex items-center">
-            <div className="mr-2 px-2 py-1 bg-[#6ABC96] text-black text-xs font-bold">
+            <div className="max-w-[80px] mr-2 px-2 py-1 bg-[#6ABC96] text-black text-xs font-bold">
               {contentType} {project?.code}
             </div>
-            <h3 className="text-gray-200 text-lg">{project?.title}</h3>
+            <h3 className="text-gray-200 text-md truncate max-w-[150px] md:max-w-sm">{project?.title}</h3>
           </div>
           <button
             onClick={handleClose}
-            className="text-gray-400 hover:text-[#6ABC96] transition-colors text-sm border border-gray-700 px-2 py-1"
+            className="text-gray-400 hover:text-[#6ABC96] transition-colors text-sm border border-gray-700 px-2 py-1 flex-shrink-0"
             aria-label="Close modal"
           >
             [X] CLOSE
@@ -154,7 +155,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
 
         {/* Project image with overlay - only show if there's an image */}
         {project?.image && (
-          <div className="relative h-60 w-full overflow-hidden">
+          <div className="relative h-60 w-full overflow-hidden flex-shrink-0">
             <OptimizedImage
               src={project.image}
               alt={project.title}
@@ -174,7 +175,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
         )}
 
         {/* Project details */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 overflow-y-auto">
           {/* Left column - Project info */}
           <div className="md:col-span-2 space-y-4">
             <div className="space-y-2">
@@ -302,7 +303,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-gray-700 p-4 flex justify-between items-center">
+        <div className="border-t border-gray-700 p-4 flex justify-between items-center flex-shrink-0">
           <div className="text-xs text-gray-500">STATUS: DECLASSIFIED</div>
           <button
             onClick={handleClose}
@@ -367,6 +368,24 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           80% {
             transform: translate(2px, -2px);
           }
+        }
+        
+        /* Custom scrollbar for terminal feel */
+        .overflow-y-auto::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-track {
+          background: #222;
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-thumb {
+          background: #444;
+        }
+
+        .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+          background: #555;
         }
       `}</style>
     </div>
