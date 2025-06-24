@@ -113,7 +113,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-300 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity max-h-7/8 duration-300 ${
         isAnimatingOut ? "opacity-0" : "opacity-100 bg-opacity-80"
       }`}
       style={{ backdropFilter: "blur(2px)" }}

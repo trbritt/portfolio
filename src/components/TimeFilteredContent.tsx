@@ -1,3 +1,4 @@
+import { isMobileDevice } from '@/utils/performance';
 import { useState, useEffect, useRef } from 'react';
 
 type Project = {
@@ -99,11 +100,11 @@ const TimeFilteredContent = ({
     switch (activeTimeframe) {
       // Updated labels to match the new order
       case 'experience':
-        return `Experience (${experiences.length})`;
+        return `Experience`;
       case 'education':
-        return `Education (${education.length})`;
+        return `Education`;
       case 'projects':
-        return `Projects (${projects.length})`;
+        return `Projects`;
       default:
         return 'Content';
     }
@@ -136,7 +137,7 @@ const TimeFilteredContent = ({
       {/* Time filter */}
       <div className="border border-gray-700 p-4">
         <div className="flex justify-between items-center">
-          <div className="text-sm">{getContentLabel()}</div>
+          {isMobileDevice() ? (<div className="text-xs">{getContentLabel()}</div>) : (<div className="text-sm">{getContentLabel()}</div>)}
           <div className="flex gap-1 text-xs">
             {[
               { key: 'experience', label: 'Experience' },
