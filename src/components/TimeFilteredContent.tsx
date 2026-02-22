@@ -130,7 +130,7 @@ const TimeFilteredContent = ({
     if (previousTimeframeRef.current === activeTimeframe && !isAnimating) {
       setShouldAnimate(false);
     }
-  }, [visibleContent]);
+  }, [activeTimeframe, isAnimating, visibleContent]);
   
   return (
     <>
