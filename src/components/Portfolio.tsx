@@ -309,7 +309,7 @@ const Portfolio = () => {
 
         {/* Footer */}
         <div className="border-t border-gray-700 py-2 px-4 text-xs text-gray-600 flex justify-between mt-auto">
-          <div>COPYRIGHT: Tristan Britt 2025</div>
+          <div>COPYRIGHT: Tristan Britt 2026</div>
           <div>STATUS: ONLINE</div>
         </div>
       </div>

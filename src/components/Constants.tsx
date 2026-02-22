@@ -93,6 +93,17 @@ const projects = [
 // Professional experience data
 const experiences = [
   {
+    code: 'TANGO',
+    title: 'Engineering Manager',
+    description: 'Head of backend engineering',
+    location: 'Hibachi',
+    detailedDescription: 'Manager of all backend divisions and chief systems designer for maintaining both exchange operations, ZK verification, blockchain settlement, and more. Have successfully led the design and implementation of native protocol vaults, institution-grade upgrades to latency and trade execution, and developed novel technological approaches to extending the DEX to new asset classes.',
+    technologies: ["Rust", "EVM", "FX", "DEX", "Cryptography", "ZK"],
+    duration: "July 2025 - Present",
+    image: "/images/hibachi.png",
+    achievements: []
+  },
+  {
     code: "FOXTROT",
     title: "Head of Research",
     description: "Led cryptoeconomics research and design",
@@ -100,7 +111,7 @@ const experiences = [
     detailedDescription:
       "Leading the research division in researching, developing, and implementing technical algorithmic strategies in cryptography, convex optimization, network theory, and more.",
     technologies: ["Rust", "Ethereum Mainnet", "Cryptography", "DeFi"],
-    duration: "December 2024 - Present",
+    duration: "December 2024 - July 2025",
     image: "/images/sylow.png",
     achievements: [],
   },
