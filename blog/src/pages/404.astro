@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404" description="No such file or directory.">
+  <div class="mx-auto flex w-full max-w-2xl flex-col items-start gap-6 py-16">
+    <p class="text-sm text-terminal-dim">
+      <span class="text-terminal-accent" aria-hidden="true">&gt;</span>
+      <span class="ml-2">cat {Astro.url.pathname}</span>
+    </p>
+    <p class="text-lg">cat: {Astro.url.pathname}: No such file or directory</p>
+    <p class="font-prose text-terminal-muted">
+      The page you asked for isn't here. It may have moved, or never existed.
+    </p>
+    <a
+      href="/"
+      class="border border-terminal-line px-4 py-2 text-sm no-underline transition-colors hover:border-terminal-accent hover:text-terminal-accent"
+    >
+      cd ~/blog
+    </a>
+  </div>
+</BaseLayout>

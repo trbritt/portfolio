@@ -1,0 +1,79 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostCard from '@/components/PostCard.astro';
+import { getPublishedPosts } from '@/lib/posts';
+import { SITE } from '@/consts';
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout>
+  <div class="mx-auto w-full max-w-4xl">
+    <section class="mb-16">
+      <h1 class="text-xl leading-relaxed md:text-2xl">
+        <span class="text-terminal-accent" aria-hidden="true">&gt;</span>
+        <span
+          data-typed
+          data-text="whoami && cat ./notes/README"
+          class="ml-2 text-terminal-text">whoami && cat ./notes/README</span
+        ><span class="cursor-block ml-1" aria-hidden="true"></span>
+      </h1>
+
+      <p class="mt-8 max-w-[62ch] font-prose text-lg leading-relaxed text-terminal-muted">
+        {SITE.description} Written by {SITE.author}, Ph.D. — longer-form companions to
+        the work listed on
+        <a
+          href={SITE.portfolio}
+          class="text-terminal-accent underline underline-offset-4 transition-colors hover:text-terminal-text"
+          >tbritt.xyz</a
+        >.
+      </p>
+    </section>
+
+    <section>
+      <div class="panel-heading">
+        <h2 class="text-sm">Entries</h2>
+        <span class="text-xs text-terminal-dim">
+          {posts.length}
+          {posts.length === 1 ? 'record' : 'records'}
+        </span>
+      </div>
+
+      {
+        posts.length === 0 ? (
+          <p class="border border-dashed border-terminal-line p-8 text-center text-sm text-terminal-dim">
+            No entries yet. Add a file to <code>src/content/blog/</code> to get started.
+          </p>
+        ) : (
+          <div class="space-y-4">
+            {posts.map((post) => (
+              <PostCard post={post} />
+            ))}
+          </div>
+        )
+      }
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  // One-shot typewriter on the landing prompt only — the portfolio's signature
+  // effect, kept off article pages where it would delay reading.
+  const el = document.querySelector<HTMLElement>('[data-typed]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (el && !reduceMotion) {
+    const text = el.dataset.text ?? '';
+    el.textContent = '';
+    let i = 0;
+
+    const tick = () => {
+      el.textContent = text.slice(0, ++i);
+      if (i < text.length) {
+        // Slight jitter so it reads as typing rather than a marquee.
+        setTimeout(tick, 45 * (0.75 + Math.random() * 0.5));
+      }
+    };
+    setTimeout(tick, 250);
+  }
+</script>

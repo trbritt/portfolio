@@ -1,0 +1,19 @@
+---
+import { SITE } from '@/consts';
+
+const year = new Date().getFullYear();
+---
+
+<footer
+  class="mt-auto flex flex-wrap justify-between gap-x-6 gap-y-1 border-t border-terminal-line px-4 py-2 text-xs text-terminal-dim md:px-6"
+>
+  <div>COPYRIGHT: {SITE.author} {year}</div>
+  <div class="flex gap-4">
+    <a href="/rss.xml" class="no-underline transition-colors hover:text-terminal-accent">RSS</a>
+    <a
+      href={`mailto:${SITE.email}`}
+      class="no-underline transition-colors hover:text-terminal-accent">CONTACT</a
+    >
+    <span>STATUS: ONLINE</span>
+  </div>
+</footer>

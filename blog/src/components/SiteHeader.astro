@@ -1,0 +1,45 @@
+---
+import { NAV } from '@/consts';
+
+const path = Astro.url.pathname;
+const isActive = (href: string) =>
+  href.startsWith('http')
+    ? false
+    : href === '/'
+      ? path === '/'
+      : path.startsWith(href);
+---
+
+<header
+  class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-b border-terminal-line px-4 py-3 md:px-6"
+>
+  <a href="/" class="group flex items-baseline gap-2 text-sm no-underline">
+    <span class="text-terminal-accent" aria-hidden="true">&gt;</span>
+    <span class="text-terminal-text group-hover:text-terminal-accent transition-colors"
+      >trbritt</span
+    >
+    <span class="text-terminal-dim">:~/blog</span>
+    <span class="cursor-block" aria-hidden="true"></span>
+  </a>
+
+  <nav aria-label="Primary">
+    <ul class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs">
+      {
+        NAV.map(({ label, href }) => (
+          <li>
+            <a
+              href={href}
+              aria-current={isActive(href) ? 'page' : undefined}
+              class:list={[
+                'no-underline transition-colors hover:text-terminal-accent',
+                isActive(href) ? 'text-terminal-accent' : 'text-terminal-muted',
+              ]}
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

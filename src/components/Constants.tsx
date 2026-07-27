@@ -3,6 +3,7 @@ const personal_details = {
   codeName: "HPC SPECIALIST | FUNDAMENTAL RESEARCH",
   currentLocation: "CANADA",
   email: "hello@tbritt.xyz",
+  blog: "https://blogs.tbritt.xyz",
 };
 
 const current_focus = {

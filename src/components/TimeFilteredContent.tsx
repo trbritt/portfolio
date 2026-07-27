@@ -39,10 +39,25 @@ type Education = {
   detailedDescription?: string;
 };
 
+/** A blog post from blogs.tbritt.xyz, read at build time in getStaticProps. */
+type Note = {
+  code: string;
+  title: string;
+  description: string;
+  location: string;
+  date: string;
+  technologies?: string[];
+  externalLink: string;
+};
+
+type ContentItem = Project | Experience | Education | Note;
+type Timeframe = 'experience' | 'education' | 'projects' | 'notes';
+
 type TimeFilteredContentProps = {
   projects: Project[];
   experiences: Experience[];
   education: Education[];
+  notes?: Note[];
   onOpenDetails: (content: Project | Experience | Education) => void;
 };
 
@@ -50,13 +65,14 @@ const TimeFilteredContent = ({
   projects,
   experiences,
   education,
+  notes = [],
   onOpenDetails,
 }: TimeFilteredContentProps) => {
-  const [activeTimeframe, setActiveTimeframe] = useState<'experience' | 'education' | 'projects'>('experience');
-  const [visibleContent, setVisibleContent] = useState<(Project | Experience | Education)[]>(experiences);
+  const [activeTimeframe, setActiveTimeframe] = useState<Timeframe>('experience');
+  const [visibleContent, setVisibleContent] = useState<ContentItem[]>(experiences);
   const [isAnimating, setIsAnimating] = useState(false);
   const [shouldAnimate, setShouldAnimate] = useState(true);
-  const previousTimeframeRef = useRef<'experience' | 'education' | 'projects'>('experience');
+  const previousTimeframeRef = useRef<Timeframe>('experience');
   
   // Update content based on active timeframe
   useEffect(() => {
@@ -79,6 +95,9 @@ const TimeFilteredContent = ({
           case 'projects':
             setVisibleContent(projects);
             break;
+          case 'notes':
+            setVisibleContent(notes);
+            break;
           default:
             setVisibleContent(experiences);
         }
@@ -90,10 +109,10 @@ const TimeFilteredContent = ({
           previousTimeframeRef.current = activeTimeframe;
         }, 20);
       }, 50); // Very short delay - just enough for React to process the state change
-      
+
       return () => clearTimeout(timer);
     }
-  }, [activeTimeframe, projects, experiences, education]);
+  }, [activeTimeframe, projects, experiences, education, notes]);
   
   // Get label for the current timeframe content
   const getContentLabel = () => {
@@ -105,18 +124,26 @@ const TimeFilteredContent = ({
         return `Education`;
       case 'projects':
         return `Projects`;
+      case 'notes':
+        return `Notes`;
       default:
         return 'Content';
     }
   };
-  
+
   // Determine if the item is a project (to show/hide the "View Project" button)
-  const isProject = (item: Project | Experience | Education): item is Project => {
+  const isProject = (item: ContentItem): item is Project => {
     return 'externalLink' in item && item.externalLink !== undefined;
   };
-  
+
+  // Notes live on blogs.tbritt.xyz, so they link out rather than opening the
+  // details modal — there is no richer local content to show.
+  const isNote = (item: ContentItem): item is Note => {
+    return 'date' in item && 'externalLink' in item;
+  };
+
   // Handle timeframe button click
-  const handleTimeframeChange = (timeframe: 'experience' | 'education' | 'projects') => {
+  const handleTimeframeChange = (timeframe: Timeframe) => {
     // Only trigger animation if changing to a different timeframe
     if (timeframe !== activeTimeframe) {
       setActiveTimeframe(timeframe);
@@ -142,12 +169,14 @@ const TimeFilteredContent = ({
             {[
               { key: 'experience', label: 'Experience' },
               { key: 'education', label: 'Education' },
-              { key: 'projects', label: 'Projects' }
+              { key: 'projects', label: 'Projects' },
+              // Only offer the tab once there is something to read.
+              ...(notes.length > 0 ? [{ key: 'notes', label: 'Notes' }] : [])
             ].map((period) => (
-              <button 
+              <button
                 key={period.key}
                 className={`px-2 py-1 border ${activeTimeframe === period.key ? 'border-[#6ABC96] text-[#6ABC96]' : 'border-gray-700 text-gray-500'}`}
-                onClick={() => handleTimeframeChange(period.key as 'experience' | 'education' | 'projects')}
+                onClick={() => handleTimeframeChange(period.key as Timeframe)}
               >
                 {period.label}
               </button>
@@ -169,24 +198,46 @@ const TimeFilteredContent = ({
               }}
             >
               <div className="mb-1 text-xs text-gray-500">
-                {activeTimeframe === 'experience' ? 'Position' : activeTimeframe === 'education' ? 'Program' : 'Project'} Code: {item.code}
+                {activeTimeframe === 'notes'
+                  ? `Published: ${item.location}`
+                  : `${activeTimeframe === 'experience' ? 'Position' : activeTimeframe === 'education' ? 'Program' : 'Project'} Code: ${item.code}`}
               </div>
               <div className="font-bold mb-1">{item.title}</div>
               <div className="text-xs text-gray-400 mb-2">{item.description}</div>
+              {isNote(item) && item.technologies && (
+                <div className="flex flex-wrap gap-1 mb-2">
+                  {item.technologies.map((tag) => (
+                    <span key={tag} className="text-[10px] text-gray-500 border border-gray-800 px-1.5 py-0.5">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              )}
               <div className="flex gap-2">
-                <button 
-                  className="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-sm hover:bg-gray-700 transition-colors"
-                  onClick={() => onOpenDetails(item)}
-                >
-                  Details
-                </button>
-                {isProject(item) && (
-                  <button 
+                {isNote(item) ? (
+                  <a
+                    href={item.externalLink}
                     className="px-3 py-1 bg-gray-800 text-xs rounded-sm hover:bg-gray-700 transition-colors"
-                    onClick={() => window.open(item.externalLink, '_blank')}
                   >
-                    <span className="text-[#6ABC96]">View Project</span> &gt;
-                  </button>
+                    <span className="text-[#6ABC96]">Read</span> &gt;
+                  </a>
+                ) : (
+                  <>
+                    <button
+                      className="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-sm hover:bg-gray-700 transition-colors"
+                      onClick={() => onOpenDetails(item)}
+                    >
+                      Details
+                    </button>
+                    {isProject(item) && (
+                      <button
+                        className="px-3 py-1 bg-gray-800 text-xs rounded-sm hover:bg-gray-700 transition-colors"
+                        onClick={() => window.open(item.externalLink, '_blank')}
+                      >
+                        <span className="text-[#6ABC96]">View Project</span> &gt;
+                      </button>
+                    )}
+                  </>
                 )}
               </div>
             </div>

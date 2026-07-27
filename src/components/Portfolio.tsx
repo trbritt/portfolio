@@ -19,8 +19,23 @@ const TerminalHexagons = dynamic(
   () => import("@/components/TerminalHexagons"),
   { ssr: false }
 );
+type BlogPost = {
+  code: string;
+  title: string;
+  description: string;
+  location: string;
+  date: string;
+  technologies?: string[];
+  externalLink: string;
+};
+
+type PortfolioProps = {
+  /** Blog frontmatter read at build time; see src/lib/blogPosts.ts. */
+  posts?: BlogPost[];
+};
+
 // Terminal-inspired Portfolio - Single Page Application
-const Portfolio = () => {
+const Portfolio = ({ posts = [] }: PortfolioProps) => {
   // State management
   const [currentSection, setCurrentSection] = useState("overview");
   const [isLoading, setIsLoading] = useState(true);
@@ -291,6 +306,7 @@ const Portfolio = () => {
               projects={projects}
               experiences={experiences}
               education={education}
+              notes={posts}
               onOpenDetails={openContentDetails}
             />
 
@@ -310,7 +326,15 @@ const Portfolio = () => {
         {/* Footer */}
         <div className="border-t border-gray-700 py-2 px-4 text-xs text-gray-600 flex justify-between mt-auto">
           <div>COPYRIGHT: Tristan Britt 2026</div>
-          <div>STATUS: ONLINE</div>
+          <div className="flex gap-6">
+            <a
+              href={personal_details.blog}
+              className="text-[#6ABC96] hover:text-gray-300 transition-colors"
+            >
+              » NOTES
+            </a>
+            <div>STATUS: ONLINE</div>
+          </div>
         </div>
       </div>
 
