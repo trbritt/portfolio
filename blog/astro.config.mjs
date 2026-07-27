@@ -15,12 +15,16 @@ import {
 } from '@shikijs/transformers';
 import { transformerTerminalChrome } from './src/lib/shiki-terminal.ts';
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://blogs.tbritt.xyz',
+
   // The MDX integration inherits the `markdown` block below, so .md and .mdx
   // posts get identical math and highlighting treatment.
   integrations: [mdx(), sitemap()],
+
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [
@@ -58,9 +62,12 @@ export default defineConfig({
       ],
     },
   },
+
   build: {
     // Emit /posts/slug/index.html so URLs stay extensionless without relying
     // on host-specific rewrite rules.
     format: 'directory',
   },
+
+  adapter: cloudflare()
 });
