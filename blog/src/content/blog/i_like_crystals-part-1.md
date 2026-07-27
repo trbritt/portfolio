@@ -94,7 +94,7 @@ really ended up taking on a life of its own as a full-fledged PDE framework, lov
 
 ## What is it?
 
-`legendre` is a block-structured, deterministic, scheduler-driven framework for time-dependent
+[`legendre`](https://github.com/trbritt/legendre.git) is a block-structured, deterministic, scheduler-driven framework for time-dependent
 PDEs — the kind you can write as a method-of-lines system:
 
 $$
