@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Anchor links land below the sticky-ish frame edge rather than flush. */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-terminal-bg text-terminal-text font-mono antialiased;
+    /* Deliberately NOT `overflow: hidden` like the portfolio's globals.css —
+       long-form posts have to scroll. */
+  }
+
+  ::selection {
+    @apply bg-terminal-accent text-terminal-bg;
+  }
+
+  :focus-visible {
+    @apply outline outline-1 outline-offset-2 outline-terminal-accent;
+  }
+
+  /* Terminal scrollbar, carried over verbatim from the portfolio. */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #222;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #444;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+@layer components {
+  /* The bracketed frame that wraps every panel on the portfolio. */
+  .corner-brackets::before,
+  .corner-brackets::after,
+  .corner-brackets > .corner-bottom::before,
+  .corner-brackets > .corner-bottom::after {
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-color: theme('colors.terminal.edge');
+    pointer-events: none;
+  }
+  .corner-brackets::before {
+    top: 0;
+    left: 0;
+    border-top-width: 1px;
+    border-left-width: 1px;
+  }
+  .corner-brackets::after {
+    top: 0;
+    right: 0;
+    border-top-width: 1px;
+    border-right-width: 1px;
+  }
+  .corner-brackets > .corner-bottom::before {
+    bottom: 0;
+    left: 0;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+  }
+  .corner-brackets > .corner-bottom::after {
+    bottom: 0;
+    right: 0;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+  }
+
+  /* Blinking block cursor, matching TerminalText.tsx. */
+  .cursor-block {
+    @apply inline-block w-2 h-[0.85em] bg-terminal-muted align-baseline;
+    animation: blink 1.06s step-end infinite;
+  }
+}
+
+@layer utilities {
+  /* Section headers: small label left, dim meta right, rule underneath. */
+  .panel-heading {
+    @apply flex items-baseline justify-between gap-4 border-b border-terminal-line pb-2 mb-6;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Markdown rendering
+   ------------------------------------------------------------------------ */
+
+/* ---------------------------------------------------------------------------
+   Code blocks
+
+   Every fence is wrapped by shiki-terminal.ts into:
+
+     figure.code-block > figcaption.code-block__bar + pre.astro-code > code
+
+   Horizontal padding lives on the individual `.line`s rather than on the
+   `pre`, so highlight and diff backgrounds run edge to edge even when a long
+   Rust signature scrolls the block sideways.
+   ------------------------------------------------------------------------ */
+
+.prose .code-block {
+  @apply my-8 border border-terminal-line bg-terminal-raised;
+}
+
+.prose .code-block__bar {
+  @apply m-0 flex items-center justify-between gap-4 border-b border-terminal-line bg-terminal-panel px-4 py-2 text-left;
+  font-family: theme('fontFamily.mono');
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.prose .code-block__lang {
+  @apply text-terminal-dim;
+}
+
+/* Shell sessions get the accent so a reader can tell "run this" from "read
+   this" at a glance. */
+.prose .code-block__lang[data-shell] {
+  @apply text-terminal-accent;
+}
+.prose .code-block__lang[data-shell]::before {
+  content: '● ';
+  @apply text-terminal-accentDim;
+}
+
+.prose .code-block__copy {
+  @apply cursor-pointer border border-transparent px-2 py-0.5 text-terminal-dim transition-colors;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  background: none;
+}
+.prose .code-block__copy:hover {
+  @apply border-terminal-line text-terminal-accent;
+}
+.prose .code-block__copy[data-copied] {
+  @apply border-terminal-accentDim text-terminal-accent;
+}
+
+/* Shiki hardcodes its theme background inline; flatten it so the block sits on
+   the panel colour instead of punching a different-coloured hole. */
+.prose .astro-code,
+.prose .astro-code span {
+  background-color: transparent !important;
+}
+
+.prose .code-block pre.astro-code {
+  @apply m-0 overflow-x-auto py-4;
+  /* Tab-indented Rust and Makefiles shouldn't blow out to 8 columns. */
+  tab-size: 4;
+}
+
+/* `max-content` lets highlight backgrounds extend past the viewport edge to
+   the true width of the longest line. */
+.prose .code-block pre.astro-code > code {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+}
+
+.prose .code-block .line {
+  @apply block px-4;
+}
+
+/* Line numbers: `showLineNumbers` after the fence. */
+.prose .code-block pre.line-numbers > code {
+  counter-reset: line;
+}
+.prose .code-block pre.line-numbers .line::before {
+  counter-increment: line;
+  content: counter(line);
+  @apply mr-4 inline-block w-6 select-none text-right text-terminal-dim/70;
+}
+
+/* Highlighted lines: `{4,9-12}` after the fence, or `// [!code highlight]`. */
+.prose .code-block .line.highlighted {
+  background-color: rgb(106 188 150 / 0.09) !important;
+  box-shadow: inset 2px 0 0 theme('colors.terminal.accent');
+}
+.prose .code-block .line.highlighted.error {
+  background-color: rgb(220 110 110 / 0.11) !important;
+  box-shadow: inset 2px 0 0 #dc6e6e;
+}
+.prose .code-block .line.highlighted.warning {
+  background-color: rgb(214 178 106 / 0.11) !important;
+  box-shadow: inset 2px 0 0 #d6b26a;
+}
+
+/* Inline word highlight: `// [!code word:Foo]`. */
+.prose .code-block .highlighted-word {
+  background-color: rgb(106 188 150 / 0.14) !important;
+  @apply border border-terminal-accentDim/60 px-0.5;
+}
+
+/* Diff annotations: `// [!code ++]` and `// [!code --]`. The marker sits in a
+   gutter reserved on every line so code doesn't shift between them. */
+.prose .code-block pre.has-diff .line {
+  @apply pl-2;
+}
+.prose .code-block pre.has-diff .line::before {
+  content: ' ';
+  @apply mr-2 inline-block w-2 select-none;
+}
+.prose .code-block .line.diff.add {
+  background-color: rgb(106 188 150 / 0.1) !important;
+}
+.prose .code-block .line.diff.add::before {
+  content: '+';
+  @apply text-terminal-accent;
+}
+.prose .code-block .line.diff.remove {
+  background-color: rgb(220 110 110 / 0.09) !important;
+  opacity: 0.75;
+}
+.prose .code-block .line.diff.remove::before {
+  content: '-';
+  color: #dc6e6e;
+}
+
+/* Focus annotation: `// [!code focus]` dims everything else until hover. */
+.prose .code-block pre.has-focused .line:not(.focused) {
+  @apply opacity-40 transition-[filter,opacity];
+  filter: blur(1.5px);
+}
+.prose .code-block pre.has-focused:hover .line:not(.focused) {
+  @apply opacity-100;
+  filter: blur(0);
+}
+
+/* A fence directly following a paragraph that introduces it reads better
+   tucked up against that paragraph. */
+.prose p + .code-block {
+  @apply mt-5;
+}
+
+/* Section headings get a mono marker in the accent colour — terminal texture
+   that costs nothing in readability. */
+.prose h2 > .heading-anchor::before {
+  content: '## ';
+}
+.prose h3 > .heading-anchor::before {
+  content: '### ';
+}
+.prose :is(h2, h3) > .heading-anchor::before {
+  @apply text-terminal-accentDim font-normal;
+}
+.prose .heading-anchor {
+  @apply no-underline text-inherit;
+}
+.prose .heading-anchor:hover::after {
+  content: ' #';
+  @apply text-terminal-accentDim;
+}
+
+/* KaTeX: display math must scroll on narrow screens rather than widen the
+   page, and the inline size needs pulling back to match the serif body. */
+.katex {
+  font-size: 1.05em;
+}
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.5rem;
+  margin-block: 1.75em;
+}
+.katex-display > .katex {
+  white-space: nowrap;
+}
+
+/* Footnotes rendered by remark-gfm. */
+.prose .footnotes {
+  @apply mt-16 pt-6 border-t border-terminal-line text-sm text-terminal-muted;
+}
+.prose .footnotes h2 {
+  @apply text-xs uppercase tracking-[0.2em] text-terminal-dim mt-0;
+}
+.prose .footnotes h2 > .heading-anchor::before {
+  content: '';
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

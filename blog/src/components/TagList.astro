@@ -1,0 +1,31 @@
+---
+interface Props {
+  tags: readonly string[];
+  /** Render as links to the tag archive, or as inert labels inside a card. */
+  linked?: boolean;
+  class?: string;
+}
+
+const { tags, linked = false, class: className = '' } = Astro.props;
+const Tag = linked ? 'a' : 'span';
+---
+
+{
+  tags.length > 0 && (
+    <ul class:list={['flex flex-wrap gap-2', className]}>
+      {tags.map((tag) => (
+        <li>
+          <Tag
+            {...(linked ? { href: `/tags/${tag}/` } : {})}
+            class:list={[
+              'block border border-terminal-line px-2 py-0.5 text-[0.7rem] lowercase tracking-wide text-terminal-muted no-underline',
+              linked && 'transition-colors hover:border-terminal-accent hover:text-terminal-accent',
+            ]}
+          >
+            #{tag}
+          </Tag>
+        </li>
+      ))}
+    </ul>
+  )
+}

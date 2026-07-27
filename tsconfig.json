@@ -23,5 +23,7 @@
       }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-    "exclude": ["node_modules"]
+    // `blog/` is a self-contained Astro project with its own tsconfig. Without
+    // this, `next build` type-checks it and fails on `astro:content`.
+    "exclude": ["node_modules", "blog", "design"]
   }

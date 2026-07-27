@@ -6,12 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "blog:install": "pnpm --dir blog install",
+    "blog:dev": "pnpm --dir blog dev",
+    "blog:build": "pnpm --dir blog build",
+    "blog:preview": "pnpm --dir blog preview",
+    "build:all": "pnpm build && pnpm blog:build"
   },
   "dependencies": {
     "@types/p5": "^1.7.6",
     "critters": "^0.0.25",
     "emailjs-com": "^3.2.0",
+    "gray-matter": "^4.0.3",
     "next": "15.5.10",
     "p5": "^2.0.3",
     "react": "^18.2.0",

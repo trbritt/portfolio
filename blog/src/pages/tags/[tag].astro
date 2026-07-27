@@ -1,0 +1,42 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostCard from '@/components/PostCard.astro';
+import { getTagIndex } from '@/lib/posts';
+
+export const getStaticPaths = (async () => {
+  const index = await getTagIndex();
+  return [...index.entries()].map(([tag, posts]) => ({
+    params: { tag },
+    props: { tag, posts },
+  }));
+}) satisfies GetStaticPaths;
+
+const { tag, posts } = Astro.props;
+---
+
+<BaseLayout title={`#${tag}`} description={`Posts tagged ${tag}.`}>
+  <div class="mx-auto w-full max-w-4xl">
+    <a
+      href="/tags/"
+      class="inline-flex items-baseline gap-2 text-xs text-terminal-dim no-underline transition-colors hover:text-terminal-accent"
+    >
+      <span class="text-terminal-accent" aria-hidden="true">&gt;</span>
+      cd ..
+    </a>
+
+    <div class="panel-heading mt-8">
+      <h1 class="text-sm">
+        <span class="text-terminal-accentDim" aria-hidden="true">#</span>{tag}
+      </h1>
+      <span class="text-xs text-terminal-dim">
+        {posts.length}
+        {posts.length === 1 ? 'record' : 'records'}
+      </span>
+    </div>
+
+    <div class="space-y-4">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </div>
+</BaseLayout>

@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+blog/node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -16,6 +17,12 @@
 # production
 /build
 /dist
+
+# astro blog (blogs.tbritt.xyz)
+blog/dist
+blog/.astro
+blog/README.md
+
 # misc
 .DS_Store
 *.pem
@@ -36,3 +43,5 @@ yarn-error.log*
 next-env.d.ts
 
 ./package-lock.json
+
+.idea

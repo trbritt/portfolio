@@ -1,0 +1,42 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getTagIndex } from '@/lib/posts';
+
+const tags = [...(await getTagIndex()).entries()];
+---
+
+<BaseLayout title="Tags" description="Every topic covered on the blog.">
+  <div class="mx-auto w-full max-w-4xl">
+    <div class="panel-heading">
+      <h1 class="text-sm">Tags</h1>
+      <span class="text-xs text-terminal-dim">{tags.length} total</span>
+    </div>
+
+    {
+      tags.length === 0 ? (
+        <p class="text-sm text-terminal-dim">No tags yet.</p>
+      ) : (
+        <ul class="grid gap-3 sm:grid-cols-2">
+          {tags.map(([tag, posts]) => (
+            <li>
+              <a
+                href={`/tags/${tag}/`}
+                class="flex items-baseline justify-between gap-4 border border-terminal-line p-4 no-underline transition-colors hover:border-terminal-accent"
+              >
+                <span class="text-sm text-terminal-text">
+                  <span class="text-terminal-accentDim" aria-hidden="true">
+                    #
+                  </span>
+                  {tag}
+                </span>
+                <span class="text-xs text-terminal-dim">
+                  {posts.length} {posts.length === 1 ? 'post' : 'posts'}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</BaseLayout>

@@ -1,0 +1,155 @@
+---
+import type { MarkdownHeading } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import TableOfContents from '@/components/TableOfContents.astro';
+import TagList from '@/components/TagList.astro';
+import { displayDate, isoDate, readingTime } from '@/consts';
+
+// Bundled locally rather than pulled from a CDN, so the fonts ship with the
+// site and formulas render offline and on first paint.
+import 'katex/dist/katex.min.css';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  headings: MarkdownHeading[];
+  prev?: CollectionEntry<'blog'>;
+  next?: CollectionEntry<'blog'>;
+}
+
+const { post, headings, prev, next } = Astro.props;
+const { title, description, pubDate, updatedDate, tags, draft, heroImage, heroAlt } = post.data;
+const minutes = readingTime(post.body);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogType="article"
+  publishedTime={pubDate}
+  image={heroImage?.src}
+>
+  <div class="mx-auto w-full max-w-6xl">
+    <!-- Breadcrumb prompt: terminal texture that doubles as back-navigation. -->
+    <a
+      href="/"
+      class="inline-flex items-baseline gap-2 text-xs text-terminal-dim no-underline transition-colors hover:text-terminal-accent"
+    >
+      <span class="text-terminal-accent" aria-hidden="true">&gt;</span>
+      cd ..
+    </a>
+
+    <div class="mt-8 gap-12 lg:grid lg:grid-cols-[minmax(0,1fr)_14rem]">
+      <div class="min-w-0">
+        <header class="border-b border-terminal-line pb-8">
+          <div
+            class="flex flex-wrap items-baseline gap-x-4 gap-y-1 text-xs uppercase tracking-wider text-terminal-dim"
+          >
+            <time datetime={isoDate(pubDate)}>{displayDate(pubDate)}</time>
+            <span aria-hidden="true">·</span>
+            <span>{minutes} min read</span>
+            {draft && <span class="text-terminal-accent">· draft</span>}
+          </div>
+
+          <h1 class="mt-4 max-w-[24ch] text-2xl font-bold leading-tight md:text-4xl">
+            {title}
+          </h1>
+
+          <p class="mt-5 max-w-[58ch] font-prose text-lg leading-relaxed text-terminal-muted">
+            {description}
+          </p>
+
+          {tags.length > 0 && <TagList tags={tags} linked class="mt-6" />}
+
+          {
+            updatedDate && (
+              <p class="mt-6 text-xs text-terminal-dim">
+                Updated <time datetime={isoDate(updatedDate)}>{displayDate(updatedDate)}</time>
+              </p>
+            )
+          }
+        </header>
+
+        {
+          heroImage && (
+            <figure class="mt-10 border border-terminal-line">
+              <Image src={heroImage} alt={heroAlt ?? ''} widths={[480, 800, 1200]} class="w-full" />
+            </figure>
+          )
+        }
+
+        <article class="prose prose-terminal mt-12 max-w-none font-prose">
+          <slot />
+        </article>
+
+        <nav
+          aria-label="Adjacent posts"
+          class="mt-20 grid gap-4 border-t border-terminal-line pt-8 sm:grid-cols-2"
+        >
+          {
+            prev ? (
+              <a
+                href={`/posts/${prev.id}/`}
+                class="group border border-terminal-line p-4 no-underline transition-colors hover:border-terminal-accent"
+              >
+                <span class="text-xs text-terminal-dim">&larr; Previous</span>
+                <span class="mt-2 block text-sm leading-snug transition-colors group-hover:text-terminal-accent">
+                  {prev.data.title}
+                </span>
+              </a>
+            ) : (
+              <div class="hidden sm:block" />
+            )
+          }
+          {
+            next && (
+              <a
+                href={`/posts/${next.id}/`}
+                class="group border border-terminal-line p-4 text-right no-underline transition-colors hover:border-terminal-accent sm:col-start-2"
+              >
+                <span class="text-xs text-terminal-dim">Next &rarr;</span>
+                <span class="mt-2 block text-sm leading-snug transition-colors group-hover:text-terminal-accent">
+                  {next.data.title}
+                </span>
+              </a>
+            )
+          }
+        </nav>
+      </div>
+
+      <!-- Reading rail. Hidden below lg, where it would just push the article
+           down; the article stays perfectly usable without it. -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-8">
+          <TableOfContents headings={headings} />
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // Copy buttons are emitted by the Shiki transformer; wiring them here keeps
+    // the markdown pipeline free of client JS.
+    for (const button of document.querySelectorAll<HTMLButtonElement>('[data-copy]')) {
+      button.addEventListener('click', async () => {
+        const code = button.closest('.code-block')?.querySelector('code');
+        if (!code) return;
+
+        try {
+          await navigator.clipboard.writeText(code.textContent ?? '');
+          button.textContent = 'copied';
+          button.dataset.copied = '';
+        } catch {
+          // Clipboard is unavailable over plain HTTP and in some browsers.
+          button.textContent = 'select + copy';
+        }
+
+        setTimeout(() => {
+          button.textContent = 'copy';
+          delete button.dataset.copied;
+        }, 1800);
+      });
+    }
+  </script>
+</BaseLayout>
