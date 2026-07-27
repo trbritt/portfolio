@@ -4,7 +4,7 @@ description: >-
   sylow is a from-scratch BN254 library in Rust, built because the existing ones
   made me angry. A walk through what actually happens between a byte string and
   a verified threshold signature.
-pubDate: 2026-06-18
+pubDate: 2025-10-11
 tags: ['cryptography', 'rust']
 ---
 

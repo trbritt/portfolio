@@ -4,7 +4,7 @@ description: >-
   jacques is a lock-free MPMC queue that packs your data and its sequence number
   into a single 128-bit atomic. A walk through the design, and why the entire
   correctness argument comes down to one even-or-odd bit.
-pubDate: 2026-06-22
+pubDate: 2026-03-01
 tags: ['rust', 'concurrency']
 ---
 
