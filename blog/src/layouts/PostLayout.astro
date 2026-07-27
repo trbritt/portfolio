@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import TableOfContents from '@/components/TableOfContents.astro';
 import TagList from '@/components/TagList.astro';
-import { displayDate, isoDate, readingTime } from '@/consts';
+import { SITE, displayDate, isoDate, readingTime } from '@/consts';
 
 // Bundled locally rather than pulled from a CDN, so the fonts ship with the
 // site and formulas render offline and on first paint.
@@ -28,7 +28,11 @@ const minutes = readingTime(post.body);
   description={description}
   ogType="article"
   publishedTime={pubDate}
+  modifiedTime={updatedDate}
   image={heroImage?.src}
+  imageAlt={heroAlt ?? `${title} — ${SITE.title}`}
+  imageWidth={heroImage?.width}
+  imageHeight={heroImage?.height}
 >
   <div class="mx-auto w-full max-w-6xl">
     <!-- Breadcrumb prompt: terminal texture that doubles as back-navigation. -->
