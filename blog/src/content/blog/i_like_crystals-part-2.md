@@ -6,7 +6,6 @@ description: >-
   and the fact that the quickest code is no code at all.
 pubDate: 2026-08-20
 tags: ['rust', 'numerics', 'finance']
-draft: true
 ---
 
 At the end of [part 1](/posts/i_like_crystals-part-1/), I said `legendre` wasn't a dendrite solver, it was a framework that
